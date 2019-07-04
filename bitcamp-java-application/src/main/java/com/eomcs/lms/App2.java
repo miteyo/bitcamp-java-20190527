@@ -9,7 +9,7 @@ public class App2 {
     java.io.InputStream keyboard = System.in;
     Scanner keyScan = new Scanner(keyboard);
 
-    System.out.println("번호는? ");
+    System.out.println("번호는?  ");
     String no = keyScan.nextLine();
 
     System.out.println("이름은? ");
@@ -28,7 +28,6 @@ public class App2 {
     String phoneNo = keyScan.nextLine();
 
     System.out.println();
-
 
     System.out.println("번호: " + no);
     System.out.println("이름: " + name);
