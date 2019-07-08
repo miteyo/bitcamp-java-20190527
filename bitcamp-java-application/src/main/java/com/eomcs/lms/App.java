@@ -8,82 +8,123 @@ import java.util.Scanner; // 컴파일러에게 알려주는 것.
 public class App {
   static Scanner keyScan;
 
+  static Lesson[] lessons = new Lesson[100]; // ,레퍼런스배열 100개를 만들어놈.
+  static int lessonsSize = 0;
+  
+  static Member[] members = new Member[100];
+  static int membersSize = 0; 
+  
+  static Board[] boards = new Board[100];
+  static int boardsSize = 0;
+
   public static void main(String[] args) {
+    
     java.io.InputStream keyboard = System.in;
     keyScan = new Scanner(keyboard);
-    
 
-    Lesson[] lessons = new Lesson[100]; //,레퍼런스배열 100개를 만들어놈.
+    while (true) {
 
-    int i = 0;
-    for (; i < lessons.length; i++) {
+      String command = prompt();
 
-      // 수업 데이터를 저장할 메모리를 Lesson 설계도에 따라 만든다
-      Lesson lesson = new Lesson();
-
-      // 사용자가 입력한 값을 Lesson 인스턴스의 각 변수에 저장한다. , 레퍼런스 lesson을 통해 입력한 데이터 담고
-      lesson.no = getIntValue("번호? ");           //메모리 주소를 통해서 입력값 저장.
-      lesson.title = getStringValue("수업명? ");
-      lesson.contents = getStringValue("설명? ");
-      lesson.startDate = getDateValue("시작일? ");
-      lesson.endDate = getDateValue("종료일? ");
-      lesson.totalHours = getIntValue("총 수업시간? ");
-      lesson.dayHours = getIntValue("일 수업시간?");
-
-      // 수업 데이터를 저장하고 있는 인스턴스의 주소를 레퍼런스 배열에 저장한다.
-      lessons[i] = lesson;
-
-      System.out.print("계속 입력하시겠습니까? (Y/n)");
-      String response = keyScan.nextLine();
-
-      if (response.equals("n"))
+      if (command.equals("quit")) {
         break;
-    }
 
-    System.out.println();
+      } else if (command.equals("/lesson/add")) {
+        addLesson(); // addLesson() 메서드 블록에 묶어 놓은 코드를 실행한다.
 
-    for (int i2 = 0; i2 <= i; i2++) { //현재 lesson 인스턴스 주소가 들어있는 배열 번호까지.
+      } else if (command.equals("/lesson/list")) {
 
-      // 레퍼런스 배열에서 한 개의 인스턴스 주소를 꺼낸다.
-      Lesson lesson = lessons[i2];
+        listLesson();
 
-      // 그 인스턴스 주소로 찾아가서 인스턴스의 각 변수 값을 꺼내 출력한다.
-      System.out.printf("%s, %s, %s, %s ~ %s, %s\n", lesson.no, lesson.title, lesson.contents,
-          lesson.startDate, lesson.endDate, lesson.totalHours);
-      
+      } else if (command.equals("/member/add")) {
+        addMember();
+
+      } else if (command.equals("/member/list")) {
+        listMember();
+        
+      } else if (command.equals("/board/add")) {
+        addBoard();
+
+      } else if (command.equals("/board/list")) {
+        listBoard();
+
+      } else {
+        System.out.println("해당 명령을 지원하지 않습니다.");
+      }
+      System.out.println();
     }
   }
 
 
-  // int i = 0;
-  //
-  // while (true) {
-  // no[i] = getIntValue("번호? ");
-  // lectureName[i] = getStringValue("수업명? ");
-  // description[i] = getStringValue("설명? ");
-  // startDate[i] = getDateValue("시작일? ");
-  // endDate[i] = getDateValue("종료일? ");
-  // totalHours[i] = getIntValue("총 수업시간? ");
-  // dayHours[i] = getIntValue("일 수업시간?");
-  // i++;
-  //
-  // System.out.print("계속 입력하시겠습니까? (Y/n)");
-  // String response = keyScan.nextLine();
-  //
-  // if (response.equals("n"))
-  // break;
-  // }
-  //
-  // System.out.println();
-  //
-  // int i2 = 0;
-  // while (i2 < i) {
-  // System.out.printf("%s, %s, %s~%s, %s\n", no[i2], lectureName[i2], description[i2],
-  // startDate[i2], endDate[i2], totalHours[i2], dayHours[i2]);
-  // i2++;
-  // }
-  // }
+  static String prompt() {
+    System.out.print("명령> ");
+    return keyScan.nextLine();
+    
+  }
 
+
+  static void listBoard() {
+    for (int i = 0; i < boardsSize; i++) {
+      Board board = boards[i];
+      System.out.printf("%s, %s, %s, %s\n", board.no, board.contents, board.createdDate,
+          board.viewCount);
+    }
+  }
+
+  static void addBoard() {
+    Board board = new Board();
+    board.no = getIntValue("번호는? ");
+    board.contents = getStringValue("내용은? ");
+    board.createdDate = new Date(System.currentTimeMillis());
+
+    boards[boardsSize++] = board;
+    System.out.println("저장하였습니다.");
+  }
+
+  static void listMember() {
+    for (int i = 0; i < membersSize; i++) {
+      Member member = members[i];
+      System.out.printf("%s, %s , %s, %s, %s\n", member.no, member.name, member.email,
+          member.tel, member.registeredDate);
+    }
+  }
+
+  static void addMember() {
+    Member member = new Member();
+    member.no = getIntValue("번호? ");
+    member.name = getStringValue("이름? ");
+    member.email = getStringValue("이메일? ");
+    member.password = getStringValue("암호? ");
+    member.photo = getStringValue("사진? ");
+    member.tel = getStringValue("전화번호? ");
+    member.registeredDate = getDateValue("가입일? ");
+
+    members[membersSize++] = member;
+    System.out.println("저장하였습니다.");
+  }
+
+  static void addLesson() {
+    Lesson lesson = new Lesson();
+
+    lesson.no = getIntValue("번호? ");
+    lesson.title = getStringValue("수업명? ");
+    lesson.contents = getStringValue("설명? ");
+    lesson.startDate = getDateValue("시작일? ");
+    lesson.endDate = getDateValue("종료일? ");
+    lesson.totalHours = getIntValue("총 수업시간? ");
+    lesson.dayHours = getIntValue("일 수업시간?");
+
+    lessons[lessonsSize++] = lesson;// 현재 size 0, 일단 0이 놓이고. lesson에서는 0이 우선 저장이되고(size는 1이 되었어도)
+    System.out.println("저장하였습니다.");
+  }
+
+  static void listLesson() {
+    for (int i = 0; i < lessonsSize; i++) { // 현재 lesson 인스턴스 주소가 들어있는 배열 번호까지
+      Lesson lesson = lessons[i]; // 레퍼런스 배열에서 한 개의 인스턴스 주소를 꺼낸다
+      System.out.printf("%s, %s, %s, %s ~ %s, %s\n", lesson.no, lesson.title, lesson.contents,
+          lesson.startDate, lesson.endDate, lesson.totalHours);
+    }
+  }
 
   private static int getIntValue(String message) {
     while (true) {
@@ -115,5 +156,8 @@ public class App {
     }
   }
 
+
+  
+  
 }
 
