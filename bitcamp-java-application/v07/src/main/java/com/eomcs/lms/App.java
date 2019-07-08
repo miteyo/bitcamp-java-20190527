@@ -11,8 +11,9 @@ public class App {
   public static void main(String[] args) {
     java.io.InputStream keyboard = System.in;
     keyScan = new Scanner(keyboard);
+    
 
-    Lesson[] lessons = new Lesson[100];
+    Lesson[] lessons = new Lesson[100]; //,레퍼런스배열 100개를 만들어놈.
 
     int i = 0;
     for (; i < lessons.length; i++) {
@@ -20,8 +21,8 @@ public class App {
       // 수업 데이터를 저장할 메모리를 Lesson 설계도에 따라 만든다
       Lesson lesson = new Lesson();
 
-      // 사용자가 입력한 값을 Lesson 인스턴스의 각 변수에 저장한다.
-      lesson.no = getIntValue("번호? ");
+      // 사용자가 입력한 값을 Lesson 인스턴스의 각 변수에 저장한다. , 레퍼런스 lesson을 통해 입력한 데이터 담고
+      lesson.no = getIntValue("번호? ");           //메모리 주소를 통해서 입력값 저장.
       lesson.title = getStringValue("수업명? ");
       lesson.contents = getStringValue("설명? ");
       lesson.startDate = getDateValue("시작일? ");
@@ -41,14 +42,15 @@ public class App {
 
     System.out.println();
 
-    for (int i2 = 0; i2 <= i; i2++) {
+    for (int i2 = 0; i2 <= i; i2++) { //현재 lesson 인스턴스 주소가 들어있는 배열 번호까지.
 
       // 레퍼런스 배열에서 한 개의 인스턴스 주소를 꺼낸다.
       Lesson lesson = lessons[i2];
- 
+
       // 그 인스턴스 주소로 찾아가서 인스턴스의 각 변수 값을 꺼내 출력한다.
       System.out.printf("%s, %s, %s, %s ~ %s, %s\n", lesson.no, lesson.title, lesson.contents,
           lesson.startDate, lesson.endDate, lesson.totalHours);
+      
     }
   }
 

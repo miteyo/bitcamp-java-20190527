@@ -11,22 +11,22 @@ public class App2 {
     java.io.InputStream keyboard = System.in;
     keyScan = new Scanner(keyboard);
 
-    Member[] members = new Member[100];
-
+    Member[] members = new Member[100]; //인스턴스 주소를 담을 배열 
+    
+    
     int i = 0;
-    for (; i < members.length; i++) {
+    for (   ; i < members.length; i++) {
       
       Member member = new Member();
-      member.no = getIntValue("번호는? ");
+      member.no = getIntValue("번호? ");
       member.name = getStringValue("이름? ");
-      member. email = getStringValue("이메일은? ");
-      member.password = getStringValue("암호는? ");
-      member.photo = getStringValue("사진은? ");
-      member.tel = getStringValue("전화번호는? ");
-      member.registeredDate = getDateValue("가입일은? ");
+      member.email = getStringValue("이메일? ");
+      member.password = getStringValue("암호? ");
+      member.photo = getStringValue("사진? ");
+      member.tel = getStringValue("전화번호? ");
+      member.registeredDate = getDateValue("가입일? ");
       
-      
-      members[i] = member;
+      members[i] = member; //배열의 i번 방에 현재 만든 따끈따끈한 인스턴스 주소를 보관해야죠.
       
       System.out.println("계속하시겠습니까? (Y/n)");
       String response = keyScan.nextLine();
@@ -37,8 +37,9 @@ public class App2 {
     System.out.println();
     
     for (int i2 = 0; i2 <= i; i2++) {
-     Member member = members[i2];
-      System.out.printf("%s, %s, %s, %s, %s, %s\n", member.no, member.name, member.email, member.password, member.tel, member.registeredDate);
+     Member member = members[i2]; //멤버스i2에 들어있는 주소를 memeber에 넣어라.
+      System.out.printf("%s, %s , %s, %s, %s\n", 
+                      member.no, member.name, member.email, member.tel, member.registeredDate);
 
     }
   }

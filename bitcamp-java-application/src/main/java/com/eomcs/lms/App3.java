@@ -19,10 +19,11 @@ public class App3 {
 
       board.no = getIntValue("번호는? ");
       board.contents = getStringValue("내용은? ");
-      board.viewCount = 0;
-      board.createdDate = getDateValue("작성일은? ");
-
-          boards[i] = board;
+      //board.viewCount = 0;
+      // board.createdDate = getDateValue("작성일은? ");
+      board.createdDate = new Date(System.currentTimeMillis()); // currentTimeMillis() 1970년을 기준으로
+                                                                // 계산된 시간을 Date 형식으로 바꾼다.
+      boards[i] = board;
 
       System.out.print("계속 입력하시겠습니까? (Y/n)");
       String response = keyScan.nextLine();
@@ -34,7 +35,8 @@ public class App3 {
 
     for (int i2 = 0; i2 <= i; i2++) {
       Board board = boards[i2];
-      System.out.printf("%s, %s, %s, %s\n", board.no, board.contents, board.createdDate, board.viewCount);
+      System.out.printf("%s, %s, %s, %s\n", board.no, board.contents, board.createdDate,
+          board.viewCount);
     }
   }
 
