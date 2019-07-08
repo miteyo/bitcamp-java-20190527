@@ -28,6 +28,7 @@ public class App {
         LessonHandler.addLesson(); // addLesson() 메서드 블록에 묶어 놓은 코드를 실행한다.
 
       } else if (command.equals("/lesson/list")) {
+
         LessonHandler.listLesson();
 
       } else if (command.equals("/member/add")) {
