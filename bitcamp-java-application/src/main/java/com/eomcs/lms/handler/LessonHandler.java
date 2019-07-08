@@ -1,13 +1,15 @@
-package com.eomcs.lms;
+package com.eomcs.lms.handler;
 
 import java.util.Scanner;
+import com.eomcs.lms.domain.Lesson;
+import com.eomcs.lms.util.Input;
 
 public class LessonHandler {
-  static Lesson[] lessons = new Lesson[100]; // ,레퍼런스배열 100개를 만들어놈.
-  static int lessonsSize = 0;
-  static Scanner keyScan;
+  private static Lesson[] lessons = new Lesson[100]; // ,레퍼런스배열 100개를 만들어놈.
+  private static int lessonsSize = 0;
+  public static Scanner keyScan;
   
-  static void addLesson() {
+  public static void addLesson() {
     Lesson lesson = new Lesson();
 
     lesson.no = Input.getIntValue("번호? ");
@@ -22,7 +24,7 @@ public class LessonHandler {
     System.out.println("저장하였습니다.");
   }
 
-  static void listLesson() {
+  public static void listLesson() {
     for (int i = 0; i < lessonsSize; i++) { // 현재 lesson 인스턴스 주소가 들어있는 배열 번호까지
       Lesson lesson = lessons[i]; // 레퍼런스 배열에서 한 개의 인스턴스 주소를 꺼낸다
       System.out.printf("%s, %s, %s, %s ~ %s, %s\n", lesson.no, lesson.title, lesson.contents,

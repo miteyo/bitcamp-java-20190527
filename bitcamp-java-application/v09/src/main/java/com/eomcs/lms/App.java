@@ -55,13 +55,11 @@ public class App {
     }
   }
 
-
   static String prompt() {
     System.out.print("명령> ");
     return keyScan.nextLine();
     
   }
-
 
   static void listBoard() {
     for (int i = 0; i < boardsSize; i++) {
