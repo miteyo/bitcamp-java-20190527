@@ -14,7 +14,7 @@ public class Test12 {
     result2 = sum1(result2, 5);
     System.out.println(result2);
     
-    System.out.println(sum2(5));
+    System.out.println(sum2(5)); //stack 이 쌓인다.  //StackOverflowError : 스택에 메소드가 계속 쌓이면 발생
     // 위의 알고리즘(결과를 내는 방식)은 다음 수학 공식과 같다.
     // sum(n) = n + sum(n-1)
   }
@@ -23,7 +23,7 @@ public class Test12 {
     return a + b;
   }
   
-  static long sum2(long n) {
+  static int sum2(int n) {
     if (n == 1)
       return n;
     
@@ -35,7 +35,8 @@ public class Test12 {
     // => 그러나 계속 메서드를 호출하기 때문에 메모리를 많이 차지하고, 실행 속도가 느리다.
     // => 특히 메서드 호출이 너무 깊게 들어가면 스택 메모리가 꽉차서 StackOverflow 예외가 발생한다.
     // => 메서드 호출이 깊지 않은 상황에 재귀호출을 적용하라.
-    return n + sum2(n - 1);
+    return n + sum2(n - 1);  //5 + 4+3+2+1
+               
   }
 }
 

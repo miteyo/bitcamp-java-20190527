@@ -9,12 +9,12 @@ public class Test18 {
     //
     
     // JVM의 전체 프로퍼티 목록 가져오기
-    java.util.Properties props = System.getProperties();
+    java.util.Properties props = System.getProperties(); //getProperties 이름이 들어있는 집합의 객체  인스턴스주소를 리턴한다.
     
-    java.util.Set keySet = props.keySet();
+    java.util.Set keySet = props.keySet(); //이름만 꺼내라....keySet에..
     
-    for (Object key : keySet) {
-      String value = System.getProperty((String)key);
+    for (Object key : keySet) { //keySet에 String 들어있을 지라도  key값 object로 꺼낸다.
+      String value = System.getProperty((String)key); //String 객체인 것에 대해 String이라고 명시, 아닐 시 오류.
       System.out.printf("%s = %s\n", key, value);
     }
   }

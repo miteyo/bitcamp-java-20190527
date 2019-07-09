@@ -4,22 +4,22 @@ package ch06;
 public class Test10 {
   public static void main(String[] args) {
     int value = 0;
-    m1(++value);
+    m1(++value); //1
     System.out.println(value);
   }
   
   static void m1(int value) {
-    m2(++value);
+    m2(++value);//2
     System.out.println(value);
   }
   
   static void m2(int value) {
-    m3(++value);
+    m3(++value);//3
     System.out.println(value);
   }
   
   static void m3(int value) {
-    System.out.println(++value);
+    System.out.println(++value);//4
   }
 }
 
@@ -36,15 +36,5 @@ public class Test10 {
   스택? 접시 쌓는 것을 생각하라!
 - 스택 방식을 "Last In First Out(LIFO;후입선출)"라 부른다. 
  */
-
-
-
-
-
-
-
-
-
-
 
 

@@ -39,7 +39,7 @@ public class Test06 {
     */
     
     // 파라미터에 넘겨 줄 값으로 배열을 바로 만든다.
-    result = plus(new int[] {10, 20, 30});
+    result = plus(new int[] {10, 20, 30});         //배열의 주소가 ( ) 안에 놓인다.  //배열을 넘긴다? 주소가 넘어간다.
     System.out.println(result);
     // 실행 순서
     // 1) int 배열 3개를 만든다.
@@ -55,7 +55,7 @@ public class Test06 {
   }
   
   // 같은 타입의 값을 0개 이상 받을 때 가변 파라미터를 사용하라!
-  static int plus(int... value) {
+  static int plus(int... value) {                 //인트 배열의 주소를 받는다. 주소에 찾아가서 배열의 각각 항목을 찾아내서
     // value는 int[] 배열 주소를 갖고 있는 레퍼런스(주소 변수)이다.
     
     // 가변 파라미터는 배열 레퍼런스처럼 사용한다.

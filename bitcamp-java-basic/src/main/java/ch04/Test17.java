@@ -18,22 +18,15 @@ public class Test17 {
     System.out.println(result);
     System.out.println((age >= 19) ? "성인" : "미성년");
     System.out.println((age >= 65) ? "성인" : false);
+    
+    //삼항
+    //변수 = 조건 ? 표현식 : 표현식
+    
+    
+    //표현식 (expression)? 
+    //=> 값을 리턴하는 문장(statement)
+    
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
