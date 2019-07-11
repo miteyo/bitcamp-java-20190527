@@ -10,7 +10,7 @@ public class Test03 {
   //      }
   // - 새데이터타입의이름 : 대문자로 시작하고, 단어의 시작도 대문자로 작성한다. 보통 명사형으로 짓는다.
   //
-  static class Score {
+  static class Score { //성적 정보를 담을 설계
     String name;  // 설계 도면이기 때문에 변수가 존재하는 상태가 아니다.
     int kor;
     int eng;
@@ -33,11 +33,15 @@ public class Test03 {
     
     Score s1;  // Score 설계도에 따라 준비한 메모리(변수들)의 주소를 저장하는 변수 
                // 이렇게 주소를 저장하는 변수를 "레퍼런스(reference)"라 부른다.
-    s1 = new Score(); // Score 설계도에 따라 메모리(변수들)를 준비시킨다.
+    s1 = new Score(); // Score 설계도에 따라 메모리(변수들)를 준비시킨다.     Heap에 메모리 영역을마들고 그 메모리의 시작주소를 리턴한다. s1에,.. s1: 스코어의  인스턴스
                       // 그리고 메모리의 주소를 레퍼런스에 저장한다.
     
-    Class c = Class.forName("ch07.Test03$Score");
-    Score s3 = (Score)c.newInstance();
+    
+//클래스 도구를 이용한 인스턴스 만들기.
+    Class c = Class.forName("ch07.Test03$Score"); //"클래스명"로 이루어진 클래스를 찾아서 메모리에 로딩해라.
+                                                  //$: Score가 Test03 안에 들어있다.
+    //                                              ->클래스를 메모리에 읽어들이면, 그 클래스 정보를 어딘가에 저장되어야한다.-> 메모리 정보가 들어있는 주소가 c가 가르킨다.
+    Score s3 = (Score)c.newInstance();          //클래스 정보를 가지고 인스턴스를 만들라는 메소드. heap에 score 인스턴스를 만들어서 주소를 리턴한다.
     
     
     // 물론 다음과 같이 한 줄에 표현할 수도 있다.

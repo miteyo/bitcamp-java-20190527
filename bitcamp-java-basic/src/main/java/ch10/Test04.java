@@ -4,7 +4,7 @@ package ch10;
 class Monitor2 {
   // 초기화 문장?
   // 변수를 선언할 때 값을 설정하는 것을 초기화 문장이라 부른다.
-  //
+  // 
   int bright = 50; // 밝기 (0% ~ 100%)
   int contrast = 50; // 명암 (0% ~ 100%)
   int widthRes = 1920; // 해상도 너비

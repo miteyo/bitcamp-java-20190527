@@ -4,7 +4,7 @@ package ch07;
 // 패키지 멤버 클래스 
 // => 단독으로 선언하는 클래스이다.
 // => 물론 이 예제처럼 한 파일에 여러 개의 클래스를 선언할 수 있지만, 
-//    보통은 한 파일에 한 클래스를 선얺나다.
+//    보통은 한 파일에 한 클래스를 선언한다.
 // => 패키지 멤버 클래스는 접근 권한이 있다면 누구든 사용할 수 있다.
 //
 class Score1 {
@@ -25,7 +25,7 @@ public class Test09 {
   // 스태틱 중첩 클래스(static nested class) = top level nested class 
   // => 이 클래스를 소유하고 있는 클래스 뿐만 아니라 다른 클래스도 사용할 수 있다.
   //
-  static class Score2 {
+  static class Score2 { // static 중첩클래스..... 
     String name; 
     int kor;
     int eng;

@@ -4,7 +4,7 @@ package ch07;
 public class Test05 {
 
   static class Score {
-    String name; 
+    String name;        //명령어이다. 
     int kor;
     int eng;
     int math;
@@ -14,7 +14,7 @@ public class Test05 {
   
   public static void main(String[] args) throws Exception {
     
-    Score s1 = new Score(); 
+    Score s1 = new Score(); //new Score() 할때 !설계도를 이용하려고 할때!, 설계도를 이용하여 인스턴스를 만드려고 할떄, , Method Area에 Score 클래스 가 로딩된다.
 
     // s1에 저장된 주소로 찾아가서 그 메모리의 각 항목 값을 설정한다.
     // => s1에 저장된 주소로 찾아가서 그 인스턴스의 각 변수에 값을 설정한다.

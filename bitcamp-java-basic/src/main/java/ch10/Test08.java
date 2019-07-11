@@ -31,6 +31,7 @@ class Monitor6 {
     this.widthRes = 2560;
     this.heightRes = 1200;
   }
+
   
   public void on() {
     // 모니터를 켜면 bright, contrast, widthRes, heightRes 값에 맞춰서 

@@ -15,7 +15,7 @@ public class Test03 {
     My3.sa = 100;
     
     // 인스턴스 필드는 new 명령을 수행해야지만 생성된다.
-    My3 obj1 = new My3();
+    My3 obj1 = new My3(); //스태틱이 안붙은 int ia가 만들어진다.인스턴스 마다 만들어진다.
     My3 obj2 = new My3();
     
     // 인스턴스 필드는 인스턴스의 주소가 있어야만 접근할 수 있다.

@@ -35,7 +35,7 @@ public class Test07 {
     // float, double = 0.0 = 0
     // boolean = false = 0
     // 
-    // 그래서 인스턴스 필드(변수)는 생성되는 즉시 0으로 초기화 된다.
+    // 그래서 인스턴스 필드(변수)는 생성되는 즉시 0으로 초기화 된다. 
     Score s = new Score();
     System.out.println(s.name);
     System.out.println(s.kor);

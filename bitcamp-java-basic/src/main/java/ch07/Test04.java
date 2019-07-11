@@ -21,7 +21,7 @@ public class Test04 {
     Score s1;  
     
     // 인스턴스(instance)
-    // => 클래스 설계도에 따라 준비된 메모리(변수들)
+    // => 클래스 설계도에 따라 준비된 메모리(변수들), heap에 준비된 변수들을 
     s1 = new Score(); 
 
     // 인스턴스 필드(instance field)
@@ -31,7 +31,7 @@ public class Test04 {
     s1.eng = 100;
     s1.math = 100;
     
-    printScore(s1); 
+    printScore(s1); //프린트 스코어에 스코아 객체 넘겨~ ----> s1이라는 변수에 저장된 인스턴스 주소를   밑의 메소드 파라미터 Score s 에 받아라. (call by referance)
     
   }
   

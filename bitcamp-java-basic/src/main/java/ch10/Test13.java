@@ -6,7 +6,7 @@ class A {
   
   static {
     System.out.println("A.static{}");
-    a += B.b;
+    a += B.b;   //b클래스가 로딩하면서 29값이 들어감.
   }
 }
 
@@ -15,7 +15,7 @@ class B {
   
   static {
     System.out.println("B.static{}");
-    b += A.a;
+    b += A.a; //22+7
   }
 }
 

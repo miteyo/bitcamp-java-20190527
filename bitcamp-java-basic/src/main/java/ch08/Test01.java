@@ -18,13 +18,13 @@ class My1 {
   //    클래스 필드를 사용하려면, 
   //        클래스명.필드명 = 값;
   //
-  static String manager = "관리자";
+  static String manager = "관리자";            //여러인스턴스에서 공유하는 값.
   static String member = "회원";
   static String guest = "손님";
   
   // new 명령을 실행할 때 힙 메모리에 생성되는 변수이다.
   // 이런 변수를 "인스턴스 필드"라고 부른다.
-  String name;
+  String name;                              //개별적으로 따로 관리.
   int age;
   String userType;
 }

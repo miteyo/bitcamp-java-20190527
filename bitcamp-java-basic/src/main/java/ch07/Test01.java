@@ -16,7 +16,8 @@ public class Test01 {
     int eng = 100;
     int math = 100;
     int sum = kor + eng + math;
-    float aver = sum / 3f;
+    float aver = sum / 3f; // int sum / 3f ->sum은 임시 float메모리를 만들고 그곳으로 sum의 값을 복사해서, 임시 메모리의 값과 3f를 계싼해서 float aver에 저장.
+    
     
     System.out.printf("%s: %d, %d, %d, %d, %f\n", name, kor, eng, math, sum, aver);
     // 음.. 할만하다!

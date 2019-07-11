@@ -26,7 +26,7 @@ public class Test08 {
       // 이유? 메서드의 접근 허용이 같은 패키지만 가능하기 때문이다.
       // 해결책? 해당 클래스로 가서 메서드를 공개하라!
       //
-      case "+": result = ch08.util.Calculator2.plus(a, b); break;
+      case "+": result = ch08.util.Calculator2.plus(a, b); break; // 다른 패키지의 클래스 사용하고 싶으면, 임포트 시키면 된다.
       case "-": result = ch08.util.Calculator2.minus(a, b); break;
       case "*": result = ch08.util.Calculator2.multiple(a, b); break;
       case "/": result = ch08.util.Calculator2.divide(a, b); break;
