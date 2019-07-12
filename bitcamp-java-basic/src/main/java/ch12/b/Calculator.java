@@ -12,7 +12,7 @@ public class Calculator {
   // => 보통 필드의 값을 리턴하는 메서드의 이름을 getXxx라고 짓는다.
   // => 그래서 이런 메서드를 "getter"라 부른다.
   public int getResult() {
-    return this.result;
+    return this.result;     //c2에 저장된 주소가 this 에있따.
   }
   
   public void plus(int value) {

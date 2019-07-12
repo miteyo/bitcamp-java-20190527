@@ -7,7 +7,7 @@ public class My {
   // (default): 내부 멤버 + 같은 패키지 소속 
   int v2; // default
   
-  // protected : 내부 멤버 + 같은 패키지 소속 + (상속 받은 필드인 경우) 서브 클래스
+  // protected : 내부 멤버 + 같은 패키지 소속 + (상속 받은 필드인 경우) 서브 클래스 (모든 서브클래스가 아니라)
   protected int v3;
   
   // public : 완전 공개

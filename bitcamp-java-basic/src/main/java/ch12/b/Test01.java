@@ -4,16 +4,7 @@ package ch12.b;
 public class Test01 {
 
   public static void main(String[] args) {
-    // 클래스를 만든 개발자의 의도에 따라 아주 잘 사용한 예:
-    Calculator c = new Calculator();
-    c.plus(100);
-    c.plus(15);
-    c.minus(27);
-    
-    // result는 캡슐로 보호되기 때문에 직접 접근할 수 없다.
-    // 
-    System.out.println(c.getResult());
-    
+
     // 클래스를 만든 개발자의 의도에 벗어나 사용한 예:
     Calculator c2 = new Calculator();
     c2.plus(100);
@@ -23,7 +14,7 @@ public class Test01 {
     // 값을 변경할 수 없다.
     // => 캡슐로 보호되고 있는 변수이다.
     //
-    //c2.result = 100; // 결과 값의 왜곡이 불가하다. 이것이 캡슐화 문법이 필요한 이유이다.
+   //c2.result = 100; // 결과 값의 왜곡이 불가하다. 이것이 캡슐화 문법이 필요한 이유이다.
     
     c2.minus(27);
     

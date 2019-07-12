@@ -9,15 +9,14 @@ public class My2 extends My {
     // private
     //obj1.v1 = 100; // 컴파일 오류!
     
-    // (default)
+    // (default)                            //같은 패키지니까.
     //obj1.v2 = 100; // 컴파일 오류!
     
-    // protected
+    // protected                            //My2것이 아니다.
     //obj1.v3 = 100; // 컴파일 오류! obj1이 가리키는 v3이다. 자기가 상속 받은 것이 아니다.
     
     // public 
     obj1.v4 = 100;
-    
     // My2가 상속 받은 필드
     //this.v1 = 100; // 컴파일 오류! 상속 받은 필드라도 private은 접근 불가!
     

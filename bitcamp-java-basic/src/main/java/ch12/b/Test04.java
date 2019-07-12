@@ -16,12 +16,12 @@ public class Test04 {
     s1.setName("홍길동");
     
     // 국, 영, 수 점수를 직접 변경할 수 없다.
-    //s1.kor = 100;
+    //s1.kor = 100;         private로 막았기 때문에 안되요
     //s1.eng = 90;
     //s1.math = 80;
     
     // 오직 setter를 통해서만 점수를 설정할 수 있다.
-    s1.setKor(100);
+    s1.setKor(100);         //
     s1.setEng(90);
     s1.setMath(80);
 
