@@ -40,13 +40,31 @@ public class App {
       } else if (command.equals("/lesson/list")) {
         lessonHandler.listLesson();
 
+      } else if (command.equals("/lesson/detail")) {
+        lessonHandler.detailLesson();
+
+      } else if (command.equals("/lesson/update")) {
+        lessonHandler.updateLesson();
+
+      } else if (command.equals("/lesson/delete")) {
+        lessonHandler.deleteLesson();
+
       } else if (command.equals("/member/add")) {
         memberHandler.addMember(); // 메소드() 실행할 떄, memberHandler 가 가리키는 곳에 데이터를 추가해라.
 
       } else if (command.equals("/member/list")) {
         memberHandler.listMember();
 
-      } else if (command.equals("/board/add")) {
+      } else if (command.equals("/member/detail")) {
+        memberHandler.detailMember();
+
+      } else if (command.equals("/member/update")) {
+        memberHandler.updateMember();
+
+      } else if (command.equals("/member/delete")) {
+        memberHandler.deleteMember();
+
+      }else if (command.equals("/board/add")) {
         boardHandler.addBoard();
 
       } else if (command.equals("/board/list")) {
@@ -58,7 +76,16 @@ public class App {
       } else if (command.equals("/board2/list")) {
         boardHandler2.listBoard();
 
-      } else {
+      } else if (command.equals("/board/detail")) {
+        boardHandler.detailBoard();
+
+      } else if (command.equals("/board/update")) {
+        boardHandler.updateBoard();
+
+      } else if (command.equals("/board/delete")) {
+        boardHandler.deleteBoard();
+
+      }else {
         System.out.println("해당 명령을 지원하지 않습니다.");
       }
 

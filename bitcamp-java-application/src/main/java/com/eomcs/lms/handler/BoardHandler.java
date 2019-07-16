@@ -37,4 +37,63 @@ public class BoardHandler {
     }
   }
 
+  public void detailBoard() {
+    int no = input.getIntValue("번호?");
+
+    Board board = null;
+    for (int i = 0; i < boardList.size(); i++) {
+      Board temp = boardList.get(i);
+      if (temp.getNo() == no) {
+        board = temp;
+      }
+    }
+
+    if (board == null) {
+      System.out.println("해당 게시글을 찾을 수 없습니다.");
+    }
+
+    System.out.printf("내용: %s\n", board.getContents());
+    System.out.printf("작성일: %s\n", board.getCreatedDate());
+
+
+
+  }
+
+  public void updateBoard() {
+    int no = input.getIntValue("번호?");
+
+    Board board = null;
+    for (int i = 0; i < boardList.size(); i++) {
+      Board temp = boardList.get(i);
+      if (temp.getNo() == no) {
+        board = temp;
+      }
+    }
+
+    if (board == null) {
+      System.out.println("해당 게시글을 찾을 수 없습니다.");
+    }
+
+    String str = input.getStringValue("내용? ");
+    if (str.length() > 0) {
+      board.setContents(str);
+      System.out.println("게시글을 변경했습니다.");
+    }
+  }
+
+  public void deleteBoard() {
+    int no = input.getIntValue("번호?");
+
+    Board board = null;
+    for (int i = 0; i < boardList.size(); i++) {
+      Board temp = boardList.get(i);
+      if (temp.getNo() == no) {
+        boardList.remove(i);
+        return;
+      }
+    }
+    System.out.println("해당 게시글을 찾을 수 없습니다.");
+    
+  }
+
 }
