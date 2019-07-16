@@ -17,7 +17,8 @@ public abstract class Car {
   // 그래야 인스턴스를 통해 메서드를 호출하지 못할 것 아닌가!
   // 그래서 추상 메서드를 갖고 있는 클래스는 인스턴스를 만들지 못하는 추상 클래스가 되어야 한다.
   // => 문법: 클래스 선언 앞에 abstract를 붙여라. 
-  public abstract void run();
+  public abstract void run(); //{ 몸체 }가 없다. 
+  //이거 구현하세요.
   
   public void stop() {
     System.out.println("멈춘다!");

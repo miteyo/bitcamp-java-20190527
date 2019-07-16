@@ -13,6 +13,7 @@ public class Test01 {
     
     System.out.println(obj.result);
 
+    
     Calculator2 obj2 = new Calculator2();
     obj2.plus(100);
     obj2.minus(50); // minus(int)

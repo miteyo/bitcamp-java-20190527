@@ -6,7 +6,7 @@ public class Test02 {
   public static void main(String[] args) {
     
     A obj = new B(); // OK
-    obj.m1(); // => B.m1()
+    obj.m1(); // => B.m1()   //obj B주소들어감, m1()이 A클래스 멤버냐만 따짐.
     //obj.m2(); // 컴파일 오류!
     
     // 실제 obj에 B 인스턴스의 주소가 들어 있다 할지라도 

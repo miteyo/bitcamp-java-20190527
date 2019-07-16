@@ -18,14 +18,16 @@ public class Test02 {
   // Car 레퍼런스는 Car 의 모든 종류(서브 클래스)의 인스턴스 주소를 담을 수 있다.
   // => 이렇게 한 변수가 다양한 타입의 값을 담을 수 있는 것을 "다형적 변수"라고 부른다.
   // => 다양적 변수를 사용하면 훨씬 더 유연하게 객체를 다룰 수 있다.
-  static void test(Car car) {
+  static void test(Car car) {                        //Car의 모든 자식들을 담을 수 있다  //c1, c2...의 레퍼런스 주소에 따라서 run 메소드가 실행된다.
     System.out.println("---------------------");
     car.run(); // car 변수가 실제 가리키는 인스턴스의 오버라이딩 메서드이다.
-    car.stop(); // Car의 stop()
+    car.stop(); // PickupTruck에 stop이 없음 -> Car의 stop()
     car.run(); // car 변수가 실제 가리키는 인스턴스의 오버라이딩 메서드이다.
     car.stop(); // Car의 stop()
     System.out.println("---------------------");
   }
+  
+ 
   
 
 }

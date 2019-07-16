@@ -34,7 +34,7 @@ public class Test02 {
     
     // instanceof 연산자
     // => 레퍼런스가 가리키는 인스턴스가 특정 클래스의 인스턴스인지 확인하는 연산자이다.
-    System.out.println(s1 instanceof String);
+    System.out.println(s1 instanceof String); //s1이 String의 인스터스냐? true
     System.out.println(s2 instanceof String);
     System.out.println(s3 instanceof String);
   }

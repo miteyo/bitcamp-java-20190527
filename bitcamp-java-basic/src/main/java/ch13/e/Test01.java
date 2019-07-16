@@ -17,7 +17,7 @@ public class Test01 {
     // :   120   |  220   <== B의 생성자 실행
     //
     
-    obj.m1();
+    //obj.m1();
     obj.m2();
     
     // 결론!

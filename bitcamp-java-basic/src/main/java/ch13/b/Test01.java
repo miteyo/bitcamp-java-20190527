@@ -8,7 +8,8 @@ public class Test01 {
     //
     Calculator2 c1 = new Calculator2();
     c1.plus(5); // Calculator의 메서드 
-    c1.multiple(2); // Calculator2의 메서드 
+    c1.multiple(2); // Calculator2의 메서드        
+                    //this.를 따라 Calculator의 result를 찾아 갈 수 는 있지만 , private 되어있기때문에 ㄴㄴ. 
     c1.minus(2); // Calculator의 메서드 
     c1.divide(4); // Calculator2의 메서드
     System.out.println(c1.getResult());

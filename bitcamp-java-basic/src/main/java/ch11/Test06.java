@@ -5,10 +5,10 @@ public class Test06 {
   public static void main(String[] args) {
     
     // String 클래스의 스태틱 메서드 활용
-    String s1 = String.format("%s님의 나이는 %d입니다.", "홍길동", 20);
+    String s1 = String.format("%s님의 나이는 %d입니다.", "홍길동", 20); 
     System.out.println(s1);
     
-    // 기본 데이터 타입의 값을 문자열로 만들기
+    // 기본 데이터 타입의 값을 문자열로 만들기 --> 숫자를 문자로 만든다.
     String s2 = String.valueOf(true); // true => "true"
     String s3 = String.valueOf(100); // 100 => "100"
     String s4 = String.valueOf(100L); // 100L => "100"

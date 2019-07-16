@@ -3,14 +3,14 @@ package ch11;
 
 public class Test07 {
   public static void main(String[] args) {
-    StringBuffer b1 = new StringBuffer("Hello");
+    StringBuffer b1 = new StringBuffer("Hello"); //스트링의 내용을 바꿀 수 있다. String은 못바꿈.
     
     // StringBuffer는 mutable 객체이다. 내부의 문자열을 변경할 수 있다.
-    StringBuffer b2 = b1.replace(2, 4, "xxxxx");
+    StringBuffer b2 = b1.replace(2, 4, "xxxxx"); //2번부터 4번 전까지
     
     System.out.println(b1 == b2);
     System.out.println(b1.toString());
-    System.out.println(b1); // 파라미터에 넘겨주는 값이 String이 아닐 경우에는 
+    System.out.println(b1); // 파라미터에 넘겨주는 값이 String이 아닐 경우에는                                                println 메소드 안에서 b1이 스트링이 아니면 스트링으로 바꿔서 리턴한다.
                             // println() 메서드가 내부에서 해당 값에 대해 toString() 호출하여
                             // 그 리턴 값(String)을 출력한다.
     // 만약에 해당 클래스에 toString() 메서드가 없으면 어떡하나요?
