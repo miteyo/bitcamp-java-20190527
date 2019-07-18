@@ -15,10 +15,10 @@ public class Test06 {
     My6 obj2 = new My6();
     obj2.name = "홍길동";
     obj2.age = 20;
-    
+        
     // Object에서 상속 받은 hashCode()는 인스턴스마다 고유의 4바이트 정수 값을 리턴한다.
     // => 이 값은 toString()의 출력 값으로 사용된다.
-    System.out.println(Integer.toHexString(obj1.hashCode()));
+    System.out.println(Integer.toHexString(obj1.hashCode())); //16진수로 바꿔서 리턴-> 이 값은 toString() 에서도 쓰인다.
     System.out.println(Integer.toHexString(obj2.hashCode()));
     
     System.out.println(obj1);
@@ -37,6 +37,9 @@ public class Test06 {
     //   다른 데이터에 대해 같은 정수 값이 나올 확률이 낮을 수록 안심하고 사용할 수 있다.
     // - 현실과 비교하면 주민번호와 같다.
     //   본인 여부를 확인할 때 주민 번호로 확인하면 매우 빠르게 결과를 알 수 있다.
+    
+    
+    
     //   원래는 본인인지 알아내려면 DNA 검사를 해야 한다.
     //   그러면 너무 시간이 오래 걸린다. 그런데 지문이나 주민번호를 사용하면 빠르게 본인 여부를 알 수 있다.
     // - 이런 이유로 hash 값을 "디지털 지문"이라 부른다.

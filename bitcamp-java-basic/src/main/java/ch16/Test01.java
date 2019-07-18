@@ -11,7 +11,7 @@ public class Test01 {
     // => 해결책? 형변환 해야 한다.
     // 
     //String obj = echo(new String("Hello")); // 컴파일 오류!
-    String obj = (String) echo(new String("Hello"));
+    String obj = (String) echo(new String("Hello")); //object를 string에 담을 순 없다.
     
     // 잘못된 형변환은 컴파일러는 속일 수 있을 지라도, runtime 에서는 오류를 발생시킨다.
     //Integer obj2 = (Integer) echo(new String("Hello")); // 실행 오류!

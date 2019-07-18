@@ -16,9 +16,9 @@ public class Test04 {
     obj2.name = "홍길동";
     obj2.age = 20;
     
-    System.out.println(obj1 == obj2);
+    System.out.println(obj1 == obj2); //주소는 다르다.
     
-    // Object에서 상속 받은 equals()는 인스턴스가 같은지 비교한다.
+    // Object에서 상속 받은 equals()는 인스턴스 주소!!가 같은지 비교한다.
     // 만약 그 내용물이 같은지 비교하고 싶다면 equals()를 재정의 하라!
     System.out.println(obj1.equals(obj2));
 

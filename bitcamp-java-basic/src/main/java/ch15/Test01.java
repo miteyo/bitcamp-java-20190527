@@ -11,7 +11,7 @@ public class Test01 {
 
   public static void main(String[] args) {
     
-    // instanceof 연산자를 사용하여 해당 인스턴스가 Object 타입인지 확인해 보자.
+    // instanceof 연산자를 사용하여 해당 인스턴스가 해당 클래스의(상위클래스인지) 알아보는 것.Object 타입인지 확인해 보자.
     // instanceof 연산자?
     // => 레퍼런스가 가리키는 인스턴스가 지정한 클래스를 인스턴스 이거나 또는 조상으로 갖는지 검사한다.
     My1 obj = new My1();
@@ -31,7 +31,19 @@ public class Test01 {
 
 }
 
-
+//Object 클래스의 주요 메서드
+// 1) toString()
+//  => 클래스 이름과 해시코드를 리턴한다. 
+// 2) equals()
+//  => 같은 인스턴스인지 검사한다.
+// 3) hashCode()
+//  => 인스턴스를 식별하는 값을 리턴한다.
+// 4) getClass()
+//  => 인스턴스의 클래스 정보를 리턴한다
+// 5) clone()
+//  => 인스턴스를 복제한 후 , 그 복제 인스턴스를 리턴한다.
+// 6) finalize()
+//  => 가비지 컬렉터에 의해 메모리에서 해제되기 직전에 호출된다.
 
 
 

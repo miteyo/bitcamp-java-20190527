@@ -36,6 +36,8 @@ class My7 {
       return false;
     return true;
   }
+  
+  
 }
 
 public class Test07 {
