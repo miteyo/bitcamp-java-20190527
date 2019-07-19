@@ -17,7 +17,7 @@ import com.eomcs.lms.handler.MemberHandler;
 import com.eomcs.util.Input;
 
 
-public class App { 
+public class App {
   static Scanner keyScan;
   public static void main(String[] args) throws Exception {
 
