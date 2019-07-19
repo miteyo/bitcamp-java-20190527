@@ -1,7 +1,10 @@
 // 상속 문법을 이용하여 스택 만들기
-package com.eomcs.util;
+package com.eomcs.util.step4;
 
-public class Stack<E> extends LinkedList<E> implements Cloneable, Iterable{ // 약속한다. Cloneable(인터페이스) 복사할 수
+import com.eomcs.util.Iterator;
+import com.eomcs.util.LinkedList;
+
+public class Stack<E> extends LinkedList<E> implements Cloneable { // 약속한다. Cloneable(인터페이스) 복사할 수
                                                                    // 있다는 자격을 준다.
 
   @Override
@@ -33,8 +36,7 @@ public class Stack<E> extends LinkedList<E> implements Cloneable, Iterable{ // �
     return size() == 0; // 사이즈가 0이면 true ->비어있다.
   }
 
-  @Override
-  public Iterator<E> iterator() {
+  public Iterator<E> getIterator() {
 
       return new Iterator<E> (){ // 중첩하면 생성자를 따로만들 필요 없다.
       @Override
@@ -47,6 +49,10 @@ public class Stack<E> extends LinkedList<E> implements Cloneable, Iterable{ // �
       }
     };
   }
+  
+  //로컬클래스를 익명클래스로 만들기
+  //클래스 지워버려, 이름이 없기 때문에 바로 인스턴스를 new를 생성해->new Iterator<E>//수퍼클래스의 기본생성자를 만들어.new Iterator<E>()
+  //Iterator<E>{...} ->익명클래스
 
 
 }

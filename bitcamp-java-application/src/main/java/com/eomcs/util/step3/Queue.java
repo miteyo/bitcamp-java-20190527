@@ -1,7 +1,11 @@
 // 상속 문법을 이용하여 큐 만들기
-package com.eomcs.util;
+package com.eomcs.util.step3;
 
-public class Queue<E> extends LinkedList<E> implements Cloneable, Iterable<E> { 
+import com.eomcs.util.Iterator;
+import com.eomcs.util.LinkedList;
+
+public class Queue<E> extends LinkedList<E> implements Cloneable { // 약속한다. Cloneable(인터페이스) 복사할 수
+  // 있다는 자격을 준다.
 
   @Override
   public Queue<E> clone() throws CloneNotSupportedException {
@@ -33,39 +37,26 @@ public class Queue<E> extends LinkedList<E> implements Cloneable, Iterable<E> {
   }
 
   // 큐의 데이터를 꺼내줄 Iterator를 제공한다.
-  @Override
-  public Iterator<E> iterator() { // 큐 객체에서 데이터를 대신 꺼내주는 역할 -> clone()된 주소가 넘어와서
-    //중첩클래스를 정의한 후 인스턴스를 딱 한개 생성하는 용도로 사용한다면
-    // 굳이 클래스 이름을 가질 필요가 없다.
-    // 클래스를 정의 하자마자 바로 인스턴스를 만들어 사용하면 편하다.
-    // 이렇게 정의하는 중첩 클래스를 "anonymous class"라 부른다.
-    
-    
-    return new Iterator<E>() { //수퍼클래스의 기본 생성자를 만든다.
+  public Iterator<E> createIterator() { // 큐 객체에서 데이터를 대신 꺼내주는 역할 -> clone()된 주소가 넘어와서
+
+    // 특정 메서드 안에서만 사용되는 클래스라면 그 메서드 안에 선언하라!
+    // 이렇게 메서드 안에 선언된 중첩 클래스를 "local class"라 부른다.
+
+//[중첩클래스] 바로 위의 createIterator() 사용 할 때, 딱 한번 쓰인다. -> 메소드 안으로 끌어올려~
+    class QueueIterator implements Iterator<E> {
       @Override
       public boolean hasNext() {
         return size() > 0; // 창고의 크기가 0보다 크다? 데이터가있다
       }
+
       @Override
       public E next() {
         return poll(); // 바깥클래스 (Queue) 의 인스턴스 주소를 생략할 수 있따.
       }
-    };
-  }
-}
+    }
     
-//    Iterator<E> iterator = new Iterator<E> () { //수퍼클래스의 기본 생성자를 만든다.
-//      @Override
-//      public boolean hasNext() {
-//        return size() > 0; // 창고의 크기가 0보다 크다? 데이터가있다
-//      }
-//      @Override
-//      public E next() {
-//        return poll(); // 바깥클래스 (Queue) 의 인스턴스 주소를 생략할 수 있따.
-//      }
-//    }
-//    return iterator; 
-//  }
-//}
+    return new QueueIterator(); // this? createIterator()호출한 그 주소, 그 값을 가진 생성자로 찾아갔더니
+  }
 
 
+}
