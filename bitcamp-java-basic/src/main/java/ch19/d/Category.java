@@ -7,19 +7,19 @@ package ch19.d;
 public final class Category {
   
   // static nested class 문법이 필요한 이유?
-  // 작은 클래스를 패키지 멤버 클래스로 만들면 소스 파일이 너무 많이 생기기 때문에 관리하기가 번거롭다.
+  // 패키지 멤버 클래스로 만들면 작은 클래스가 여러개 생성된다.
+  // 즉 소스 파일이 너무 많이 생기기 때문에 관리하기가 번거롭다.
   // => 예: Computer.java, Mouse.java, Appliance.java, Book.java
   // 
-  // => 이렇게 작은 크기에 클래스가 많은 경우 
-  //    어느 한 클래스 안에 static 중첩 클래스로 선언하는 것이 
-  //    소스 파일을 관리하기 쉽게 도와준다.
+  // => 이런 작은 클래스들은 오히려 한 클래스 안에 static 중첩 클래스로 선언하는 것이 
+  //    소스 파일 관리하기 편하다.
   // 
   // 분류의 각 계층을 static 중첩 클래스로 선언하여 관리하다.
   // => 보통 클래스 이름은 대문자로 시작해야 한다.
   // => 그런데 OGNL 표기법에서 하위 프로퍼티(필드)를 지정하는 것처럼 보이게 하려고 
   //    일부러 소문자로 이름을 지었다.
   //
-  public final static class computer {
+  public final static class computer { //static이기 떄문에 직접 computer.mouse 부르기 가능
     
     public final static class mouse {
       public static final int bluetooth = 111;

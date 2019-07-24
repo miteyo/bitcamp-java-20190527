@@ -4,5 +4,7 @@ package ch17.c;
 // 다음 클래스를 정의하였다.
 // 
 public class Sorter {
-  public void sort(int[] values) {};
+  public void sort(int[] values) {
+    
+  } //데이터를 파라미터로 받는 
 }

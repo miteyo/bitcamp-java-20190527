@@ -23,7 +23,7 @@ public class Test01 {
     }
     
     // java.util.Map 구현체
-    // => HashMap, Hashtable 이 있다.
+    // => HashMap, Hashtable 이 있다. //Hashtable 는 null 안된다.
     // => key를 가지고 value을 저장하고 꺼낸다.
     // 
     
@@ -42,7 +42,7 @@ public class Test01 {
     map.put("ccc", new Student("유관순", 16));
     
     // 같은 key로 값을 저장하면 기존의 값을 덮어 쓴다.
-    map.put("ccc", new Student("안중근", 25));
+    map.put(new String ("ccc"), new Student("안중근", 25));
     
     // 맵에서 값 꺼내기
     // => 저장할 때 사용한 키를 가지고 꺼낸다.

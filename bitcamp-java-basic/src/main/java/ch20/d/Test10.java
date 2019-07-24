@@ -48,13 +48,14 @@ public class Test10 {
     System.out.println(map.get(k1));
     System.out.println(map.get(k2));
     System.out.println(map.get(k3));
+    System.out.println("-------------------------");
 
     Key k4 = new Key(100, 2);
     System.out.println(map.get(k4));
 
     System.out.println(k2 == k4);
     System.out.println(k2.hashCode() == k4.hashCode());
-    System.out.println(k2.equals(k4));
+    System.out.println(k2.equals(k4)); //k2와 k4는 다른 객체
     
     // 저장할 때,
     // => Key 객체의 hashCode() 리턴 값으로 위치를 계산하여 저장한다.

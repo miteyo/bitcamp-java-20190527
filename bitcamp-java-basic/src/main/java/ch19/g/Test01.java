@@ -5,7 +5,7 @@ import java.io.File;
 
 public class Test01 {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) { // 현재 디렉토리
     // File 클래스: 파일이나 디렉토리 정보를 다루는 도구
     File dir = new File("./"); // 이클립스에서 실행하면 ./ 는 프로젝트 디렉토리를 가리킨다.
     

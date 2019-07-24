@@ -10,20 +10,20 @@ public class Test02 {
     ArrayList<String> list = new ArrayList<>();
     
     // add(value) : 목록에 순차적으로 추가한다.
-    list.add("aaa");
+    list.add("aaa"); //상수풀에 저장
     list.add("bbb");
     list.add("ccc");
     list.add("ddd");
     list.add(null); // ArrayList는 null을 추가하는 것을 허용한다.
     list.add("eee");
     list.add(null); // ArrayList는 null을 추가하는 것을 허용한다.
-    list.add("aaa"); // ArrayList는 같은 인스턴스를 중복해서 추가할 수 있다. 
+    list.add("aaa"); // ArrayList는 같은 인스턴스를 중복해서 추가할 수 있다. ->상수풀에 저장해서
     list.add("bbb"); // ArrayList는 같은 인스턴스를 중복해서 추가할 수 있다.
     
     System.out.println(list);
     
     // remove(index) : 목록에서 해당 인덱스의 값을 삭제한다. 리턴 값은 삭제된 값이다.
-    String s = list.remove(2);
+    String s = list.remove(2); //리턴값은 삭제한것들
     System.out.println(list);
     System.out.println(s);
     
@@ -33,9 +33,10 @@ public class Test02 {
 
     // get(index) : 해당 위치의 값을 리턴한다.
     System.out.println(list.get(2));
+    System.out.println(list.get(3));
     
     // 인덱스가 유효하지 않을 때 IndexOutOfBoundsException 예외가 발생한다.
-    System.out.println(list.get(3));
+    System.out.println(list.get(1));
   }
 
 }

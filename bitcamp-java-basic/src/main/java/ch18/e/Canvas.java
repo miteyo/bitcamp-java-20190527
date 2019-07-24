@@ -22,7 +22,7 @@ public class Canvas {
   //Monami tool;
   
   
-  public Canvas(Pen tool) {
+  public Canvas(Pen tool) { //생성자에 Pen 인터페이스 규칙에 따라 만든 객체를 넣는다)
     this.tool = tool;
   }
   
@@ -31,6 +31,10 @@ public class Canvas {
   }
   
   public void render(String contents) {
+    
+    // 어떤 Pen인지 상관없이, Pen 사용 규칙에 따라 메소드를 호출한다.
+    // => 클래스에 상관없이 일관된 방법으로 펜을 사용할 수 있어 유지보수에 좋다.
+    // => 이것이 인터페이스를 사용하는 이유이다.
     tool.write(contents);
   }
 }

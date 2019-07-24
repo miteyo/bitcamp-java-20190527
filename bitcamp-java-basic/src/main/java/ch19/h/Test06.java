@@ -37,12 +37,13 @@ public class Test06 {
     void stop();
   }
   
-  static abstract class Player4 {
+  static abstract class Player4 { //람다문법은 인터페이스만 가능하다.
     public abstract void play();
   }
   
   public static void main(String[] args) {
     
+    //추상 메서드를 한 개만 갖고 있는 인터페이스에 대해 람다 문법으로 익명클래스를 만들 수 있다.
     Player p1 = () -> System.out.println("Player...");
     p1.play();
     

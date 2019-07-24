@@ -9,7 +9,7 @@ public class Test01 {
     MultiPen t2 = new MultiPen();
     
     // Pen이라는 도구를 사용하면 Canvas를 만든다.
-    Canvas c1 = new Canvas(t1);
+    Canvas c1 = new Canvas(t1); //볼펜을 생성자로 준다. -> tool
     
     // 캔버스를 실행한다.
     // 캔버스는 생성자에서 주입 받은 펜을 사용하여 텍스트를 그릴 것이다.

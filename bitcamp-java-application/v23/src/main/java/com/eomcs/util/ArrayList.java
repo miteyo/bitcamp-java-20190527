@@ -62,7 +62,7 @@ public class ArrayList<E> implements List <E> { //List 규칙을 따를 것이�
     System.arraycopy(list, 0, a, 0, size); // 기존배열에 복사. 원본 배열주소"aaa,bbb,ccc", 몇번째부터 복사할거냐,
 
     if (a.length > size)
-      a[size] = null; // a[10] 에 null을 채워라. 인덱스는 9까지 채워져있다. (출력시, 배열==null이면 break 가능성.)
+      a[size] = null; // a[10] 에 null을 채워라. 인덱스는 9까지 채워져있다. (출력시, 배열==null이면 break 가능성)
     return a;
   }
 

@@ -16,7 +16,7 @@ public class Test01 {
     ArrayList list = new ArrayList();
     list.add("Hello");
     list.add(Integer.valueOf(100));
-    list.add(100);
+    list.add(100); // 정말 숫자 100이 저장 된것이 아니라 오토박싱된 것~
     list.add(new Date());
     
     // ArrayList는 제네릭이 적용되어 있기 때문에 모든 타입의 인스턴스를 저장하고 싶다면,

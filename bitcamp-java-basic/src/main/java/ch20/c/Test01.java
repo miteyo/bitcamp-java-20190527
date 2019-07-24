@@ -22,12 +22,12 @@ public class Test01 {
     // => null을 넣을 수 있다. 단 중복해서 넣을 수 없다.
     set.add(null);
     set.add(null);
-    
+    System.out.println(set.size());
     // Set에 들어 있는 값 꺼내기
     // => 직접 값을 한 개씩 꺼내는 메서드가 없다.
     // => 꺼내주는 객체(iterator)의 도움을 받아야 한다.
     //
-    Iterator<String> iterator = set.iterator(); 
+    Iterator<String> iterator = set.iterator(); //iterator()를 리턴받아서 꺼낸다.
     
     while (iterator.hasNext()) {
       System.out.println(iterator.next());
@@ -50,7 +50,7 @@ public class Test01 {
     // => 파라미터로 넘겨 준 배열이 값을 담을 만큼 크지 않다면, 새 배열을 만들어 리턴한다.
     String[] temp = new String[0]; 
     String[] values2 = set.toArray(temp);
-    System.out.println(temp == values2); // false
+    System.out.println(temp == values2); // false // 준 배열과 리턴한 배열이 다르다.(새로운 배열 리턴함)
     
     for (String value : values2) {
       System.out.println(value);
@@ -61,7 +61,7 @@ public class Test01 {
     // 입력한 값의 타입으로 배열을 받고 싶다면?
     // => 파라미터로 넘겨 준 배열이 값을 담을 만큼 충분히 크다면, 새 배열을 리턴하지 않는다.
     String[] values3 = new String[set.size()]; 
-    String[] values4 = set.toArray(values3);
+    String[] values4 = set.toArray(values3);    //크기가 같으면 새 배열 만들지 않아서 준 배열과 리턴한 배열이 같다
     System.out.println(values3 == values4); // true
     
     for (String value : values3) {

@@ -14,7 +14,7 @@ public class Test05 {
     // 굳이 로컬 클래스로 단정하게 정의할 필요가 없다.
     // list() 메서드 가까이 익명 클래스를 사용하자!
     //
-    FilenameFilter filter = new FilenameFilter() {
+    FilenameFilter filter = new FilenameFilter() { //인터페인스에 있는 메소드 구현하고 () 생성자는 오브젝트의 기본생성자. 익명클래스이기 때문에 바로 new
       @Override
       public boolean accept(File dir, String name) {
         if (name.endsWith(".txt"))

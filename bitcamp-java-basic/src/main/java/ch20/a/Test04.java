@@ -49,6 +49,7 @@ public class Test04 {
           return false;
         return true;
       }
+      
     }
     
     Student s1 = new Student("aaa", 20);
@@ -57,9 +58,9 @@ public class Test04 {
     
     Student s4 = new Student("bbb", 30);
     
-    System.out.println(s2 == s4);
-    System.out.println(s2.equals(s4));
-    System.out.println(s2.hashCode() == s4.hashCode());
+    System.out.println(s2 == s4);//f
+    System.out.println(s2.equals(s4));//t
+    System.out.println(s2.hashCode() == s4.hashCode());//f
     
     ArrayList<Student> list = new ArrayList<>();
     list.add(s1);

@@ -3,6 +3,7 @@ package ch16;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class Test05 {
   public static void main(String[] args) {
@@ -38,6 +39,7 @@ public class Test05 {
     // => 원래 배열(original)과 같은 타입의 배열을 배열크기(newLength)에 맞춰 새로 생성한다.
     return Arrays.copyOf(arr, 10);
   }
+
 
   // 예3) 배열의 타입 정보를 받아 생성하기
   @SuppressWarnings("unchecked")

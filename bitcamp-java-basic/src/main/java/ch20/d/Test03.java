@@ -28,10 +28,10 @@ public class Test03 {
     map.put("bbb", new Student("임꺽정", 30));
     map.put("ccc", new Student("안중근", 25));
     
-    // key 목록 꺼내기
+    // key 목록만 꺼내기 -> ketSet() -> Set을 리턴한다.
     Set<String> keySet = map.keySet();
     for (String key : keySet) {
-      System.out.printf("%s=> %s\n", key, map.get(key));
+      System.out.printf("%s=> %s\n", key, map.get(key)); //key 목록을 꺼내고 그 key를 가지고 value을 꺼내는 방법
     }
     
   }

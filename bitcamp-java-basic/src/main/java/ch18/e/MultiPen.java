@@ -7,4 +7,5 @@ public class MultiPen extends Zebra implements Pen {
       return;
     System.out.println("제브라>> " + text);
   }
+
 }

@@ -20,7 +20,7 @@ public class Test02 {
     //    이 인터페이스에 따라 동작하는 클래스를 만들고,
     //    그 클래스의 인스턴스를 생성한 후 
     //    list() 메서드에 전달하면 된다.
-    String[] names = dir.list(new MyFilenameFilter());
+    String[] names = dir.list(new MyFilenameFilter()); //파라미터값으로 그 인터페이스 규칙에 따라 구현한 클래스의  객체를 요구한다.
     //
     // 몇 일, 몇 달, 몇 년이 지난 후 
     // 도대체 저 필터가 무엇을 걸러내는지 알려면 

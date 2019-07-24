@@ -30,7 +30,7 @@ public class Test05 {
     map.put("ccc", new Student("안중근", 25));
     
     // key, value 함께 꺼내기
-    Set<Entry<String,Student>> entrySet = map.entrySet();
+    Set<Entry<String,Student>> entrySet = map.entrySet();// entrySet() key와 값이 하나로 묶여진 상자(Entry)을 리턴한다. 
     for (Entry<String,Student> entry : entrySet) {
       System.out.printf("%s==>%s\n", entry.getKey(), entry.getValue());
     }
