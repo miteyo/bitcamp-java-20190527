@@ -18,7 +18,7 @@ public class Test04 {
     // 애플리케이션 예외 처리
     // => JVM이 종료되지 않게 하려면 애플리케이션 예외를 처리해야 한다.
     // => 문법
-    //    try { 예외가 발생할 수 있는 코드 } catch (Exception e) { 예외 처리 코드 }
+    //    try { 예외가 발생할 수 있는 코드 } catch (Exception e) { 예외 처리 코드 } //Exception 뿐만 아니라, 하위클래스도 모두 받을수 있다.
     //
     //
     try {

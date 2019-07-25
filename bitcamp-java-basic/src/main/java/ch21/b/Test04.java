@@ -50,10 +50,10 @@ public class Test04 {
         // NumberFormatException 예외까지 받을 수 있기 때문에 
         // 그 다음에 배치한 NumberFormatException catch 블록은 실행되지 않는다.
         //
-      } catch (NumberFormatException e) {
+      } catch (NumberFormatException e) {//서브클래스를 먼저 적고.
         System.out.println("정수 값을 입력하세요!");
         
-      } catch (RuntimeException e) { // OK! 공통 부모이기 때문에 가능!
+      } catch (RuntimeException e) { // OK! 공통 부모이기 때문에 가능! //상위클래스를 적어야한다.
         System.out.println("명령어 처리 중 오류 발생!");
         System.out.println(e.toString());
       }        

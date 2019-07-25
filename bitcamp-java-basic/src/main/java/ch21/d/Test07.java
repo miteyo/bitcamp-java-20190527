@@ -1,4 +1,5 @@
 // 예외 던지기 - RuntimeException 예외 던지기 II
+// 실무 : RuntimeException  
 package ch21.d;
 
 public class Test07 {

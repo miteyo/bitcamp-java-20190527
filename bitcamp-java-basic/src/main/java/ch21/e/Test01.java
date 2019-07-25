@@ -8,12 +8,12 @@ public class Test01 {
   // => 예외 클래스는 수퍼 클래스에 기능을 덧붙이는 것이 아니다.
   // => 단지 클래스 이름으로 예외를 직관적으로 알리기 위해 사용한다.
   //
-  static class MyException extends Exception {
+  static class MyException extends Exception { //MyException 이름이름으로 직관적으로 예외를 던지는 것.
 
     // 보통 수퍼 클래스를 상속 받은 후 수퍼 클래스와 같은 생성자를 만든다.
     // 서브 클래스 생성자는 단지 수퍼 클래스의 생성자를 호출한다.
     public MyException() {
-      super();
+      super(); //super의 생성자 호출
     }
 
     public MyException(String message, Throwable cause, boolean enableSuppression,

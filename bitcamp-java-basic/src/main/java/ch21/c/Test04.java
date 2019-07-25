@@ -12,7 +12,7 @@ public class Test04 {
       // => throws 절에는 java.lang.Throwable 클래스만 선언할 수 있다.
       //    Object 클래스와 같은 것은 선언할 수 없다.
       throws Exception { // 여러 예외를 퉁쳐서 하나로 표현할 수 있다.
-      /*
+      /* 다른 개발자를 위해서
       throws ClassNotFoundException, // 이 메서드에서 발생하는 예외의 목록을 지정한다.
              NoSuchMethodException,  // 만약 메서드를 실행하는 중에 이런 예외가 발생한다면,
              InstantiationException, // 즉시 이 메서드의 실행을 멈추고 

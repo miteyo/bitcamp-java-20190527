@@ -18,7 +18,7 @@ public class Test02 {
       
     } catch (Exception e) {
       // 예외가 발생한 메서드의 위치 정보를 콘솔에 자세하게 출력한다.
-      e.printStackTrace();
+      e.printStackTrace(); //메인메소드로부터 도대체 어떤 메소드를 호출 했길래 예외가 떴는지 호출 내용  모두  출력
       
     } finally {
       keyboard.close();

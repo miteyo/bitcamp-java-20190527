@@ -37,7 +37,7 @@ public class Test02 {
     // int 값을 리턴하는 메서드가 오류를 알리는 방법
     // => 이상한 값을 리턴한다.
     // 
-    //int result = divide(1000, 7); // OK! 
+   // int result = divide(1000, 7); // OK! 
     //int result = divide(1000, 0); // OK! 예외임을 알 수 있다.
     int result = divide(1919191919, -1); // 정상적인 나누기임에도 불구하고 
     if (result == -1919191919) { // 리턴 값이 -1919191919 이기 때문에 오류로 판단한다. 
@@ -75,7 +75,8 @@ public class Test02 {
   static int divide(int a, int b) {
     if (b == 0) {
       // 호출자에게 어떤 값으로 알려줘야 오류를 전달할 수 있을까?
-      // => 옛날에는 이런 경우 결과로 잘 리턴하지 않는 이상한 값을 사용하였다.
+      // => 옛날에는 이런 경우 이상한 값을 리턴 하였다.
+      // => 예를 들어 divide() 계산 결과로 잘 나오지 않은 값을 리턴하였다.
       return -1919191919;
     }
     return a / b;

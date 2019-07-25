@@ -28,7 +28,7 @@ public class Test06 {
     m1();
   }
   
-  static void m1() {
+  static void m1() throws RuntimeException { // 적든지 말든지 상관 없다.
     // RuntimeException 예외를 발생시키는 메서드는 
     // 메서드 선언부에 어떤 예외를 던지는지 선언(보고)하지 않아도 된다.
     throw new RuntimeException("m1()에서 발생한 예외");
