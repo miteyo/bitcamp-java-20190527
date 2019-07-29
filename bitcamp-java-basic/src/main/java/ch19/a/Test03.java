@@ -65,11 +65,9 @@ public class Test03 {
     //다른 클래스에서 중첩 클래스를 사용하기.
     // => static nested class 사용
     //C.m1();
-
     
-//    X.A obj;
-//    obj = new X.A();
-//    
+    X.A obj = new X.A();
+    
     //=> non static nested class(inner class)사용
     X.B obj2;
     

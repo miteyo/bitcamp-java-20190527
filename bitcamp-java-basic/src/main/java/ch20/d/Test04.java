@@ -30,6 +30,7 @@ public class Test04 {
     
     // value 목록 꺼내기
     Collection<Student> values = map.values(); //values(); key 필요없고 value만 담긴 리턴한다. 리턴하는 것은 Collection 인터페이스 규칙에 따라 만든 클래스 객체를 담는다.
+   
     for (Student value : values) {
       System.out.println(value);
     }

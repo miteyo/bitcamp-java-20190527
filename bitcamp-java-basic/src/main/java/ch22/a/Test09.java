@@ -11,10 +11,10 @@ public class Test09 {
     File file = new File(".");
     
     // 하위 파일이나 디렉토리의 상세 정보 알아내기
-    File[] files = file.listFiles();
+    File[] files = file.listFiles();            //list는 이름만 담아서 리턴
     
-    for (File f : files) {
-      System.out.printf("%s %12d %s\n", 
+    for (File f : files) {                      //listFiles() 정보를 상세하게 뽑기
+      System.out.printf("%s %12d %s\n",            //%12d 정수값을 뽑는데 12자리를 확보해라
           f.isDirectory() ? "d" : "-",
           f.length(),
           f.getName());

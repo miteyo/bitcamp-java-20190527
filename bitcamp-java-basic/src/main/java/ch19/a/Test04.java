@@ -10,7 +10,7 @@ class Car {
     System.out.println("달린다!");
   }
   
-  //익명클래스의 예제를 위한 클래스 ( Car를 상속받은 익명클래스 만들기
+  //익명클래스의 예제를 위한 클래스 Car를 상속받은 익명클래스 만들기
   public Car() {
     this.model = "미정";
   }

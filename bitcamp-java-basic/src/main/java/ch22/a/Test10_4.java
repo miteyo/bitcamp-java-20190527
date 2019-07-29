@@ -17,12 +17,10 @@ public class Test10_4 {
     //      () -> 문장 한개
     //      () -> {문장1; 문장2; 문장3;}
     //
-    String[] names = file.list((File dir, String name) -> {
-        if (name.endsWith(".txt"))
-          return true;
-        else 
-          return false;
-    });
+    String[] names = file.list((File dir, String name) -> name.endsWith(".txt"));
+    
+    
+    //중괄호 안에 한개일 때 중괄호/ return 삭제
     
     for (String name : names) {
       System.out.println(name);

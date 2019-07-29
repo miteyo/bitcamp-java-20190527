@@ -11,7 +11,7 @@ public class Test02 {
     // => 디렉토리나 파일을 생성, 삭제, 변경할 수 있다.
     
     // 존재하는 파일
-    File file = new File("build.gradle");
+    File file = new File("./build.gradle");
     System.out.println(file.getName()); // 파일명
     System.out.println(file.getPath()); // 경로
     System.out.println(file.getAbsolutePath()); // 절대 경로
@@ -27,7 +27,7 @@ public class Test02 {
     System.out.println(file.isDirectory());
     System.out.println(file.isFile());
     System.out.println(file.isHidden());
-    System.out.println(file.exists());
+    System.out.println(file.exists());      //처음에 이 메소드를 호출해서 존재 여부부터 파악하고 나머지 기능 수행하기.
     System.out.println(file.canExecute());
     
     System.out.println("---------------------------");

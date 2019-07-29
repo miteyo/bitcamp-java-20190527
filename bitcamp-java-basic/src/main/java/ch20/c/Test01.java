@@ -22,7 +22,7 @@ public class Test01 {
     // => null을 넣을 수 있다. 단 중복해서 넣을 수 없다.
     set.add(null);
     set.add(null);
-    System.out.println(set.size());
+    System.out.println(set.size()); //4
     // Set에 들어 있는 값 꺼내기
     // => 직접 값을 한 개씩 꺼내는 메서드가 없다.
     // => 꺼내주는 객체(iterator)의 도움을 받아야 한다.

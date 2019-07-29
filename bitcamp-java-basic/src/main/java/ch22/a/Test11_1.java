@@ -7,13 +7,10 @@ import java.io.FileFilter;
 public class Test11_1 {
 
   // static nested class 
-  static class TextFileFilter implements FileFilter {
+  static class TextFileFilter implements FileFilter { //이름으로 구분하는 것이 아니라 file정보로 구분하는 것
     @Override
-    public boolean accept(File pathname) {
-      if (pathname.isFile() && pathname.getName().endsWith(".txt"))
-        return true;
-      else 
-        return false;
+    public boolean accept(File file) {
+      return file.isFile() && file.getName().endsWith(".txt"); //일단 파일이어야 하고&& 이름이 txt
     }
   }
   

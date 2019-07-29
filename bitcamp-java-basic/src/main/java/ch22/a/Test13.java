@@ -9,26 +9,44 @@ public class Test13 {
     // bin의 하위 폴더와 파일을 모두 삭제해야만 bin 폴더를 삭제할 수 있다.
     // => 재귀 호출을 이용할 것.
     File dir = new File("bin");
-    
+
     delete(dir);
-    
+
     System.out.println("삭제 완료!");
   }
-  
-  static void delete(File dir) {
-    File[] files = dir.listFiles();
-    for (File file : files) {
-      if (file.isFile()) {
-        file.delete();
-      } else {
-        delete(file);
-      }
-    }
-    dir.delete();
+
+  static void delete(File path) {
+
+    // 1) 파라미터로 넘어온 파일 객체가 파일이라면 삭제하고 리턴한다.
+
+     if(path.isFile()) {
+     path.delete();
+     return;
+     }
+
+    // 2) 디렉토리라면 하위 디렉토리나 파일 목록을 얻는다.
+    File[] list = path.listFiles();
+
+     // 3) 하위 디렉토리나 파일을 삭제한다.
+     for (File file : list) {
+     delete(file);
+     }
+    
+
+//3) 하위 디렉토리나 파일을 삭제
+    
+//    for (File file : list) {
+//      if (file.isFile())
+//        file.delete();
+//      else
+//        delete(file);
+//    }
+
+    // 4) 현재 디렉토리를 삭제한다
+    path.delete();
+
+
   }
 }
-
-
-
 
 

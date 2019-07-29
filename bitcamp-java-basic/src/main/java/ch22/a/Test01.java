@@ -15,11 +15,11 @@ public class Test01 {
     // => 이클립스 : 프로젝트 디렉토리를 가리킨다.
     // => 콘솔 : 현재 명령어를 실행하는 위치를 가리킨다.
     //
-    File dir = new File("../../teacher/java-basic");
-    System.out.println(dir.getName()); // 폴더명
-    System.out.println(dir.getPath()); // 경로
+    File dir = new File("../bitcamp-java-application/src2"); 
+    System.out.println(dir.getName()); // 폴더명 src  현재 디렉토리를 알고싶을 때         =====> 자주쓴다.
+    System.out.println(dir.getPath()); // 경로 ../bitcamp-java-application/src
     System.out.println(dir.getAbsolutePath()); // 절대 경로
-    System.out.println(dir.getCanonicalPath()); // 계산된 경로
+    System.out.println(dir.getCanonicalPath()); // 계산된 경로                                   =====> 자주쓴다.
 
     // 디렉토리가 존재하지 않는 경우 크기는 0이 나온다.
     System.out.println(dir.getTotalSpace()); // HDD 전체 용량
@@ -27,15 +27,15 @@ public class Test01 {
     System.out.println(dir.getUsableSpace()); // 빈 용량 중에서 사용할 수 있는 용량
     
     // 디렉토리가 존재하지 않는 경우 리턴 값은 false이다.
-    System.out.println(dir.isDirectory());
+    System.out.println(dir.isDirectory());                                 // =====> 실무사용
     System.out.println(dir.isFile());
     System.out.println(dir.isHidden());
     System.out.println(dir.exists());
-    System.out.println(dir.canExecute());
+    System.out.println(dir.canExecute()); //실행 권한이 있느냐
     
     System.out.println("---------------------------");
     
-    dir = new File(".");
+    dir = new File("."); //현재 디렉토리
     System.out.println(dir.getName()); // 폴더명
     System.out.println(dir.getPath()); // 경로
     System.out.println(dir.getAbsolutePath()); // 절대 경로
@@ -51,7 +51,7 @@ public class Test01 {
     System.out.println(dir.isFile());
     System.out.println(dir.isHidden());
     System.out.println(dir.exists());
-    System.out.println(dir.canExecute());
+    System.out.println(dir.canExecute()); 
     
     
   }
