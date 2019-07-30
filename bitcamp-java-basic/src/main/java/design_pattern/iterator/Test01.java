@@ -37,7 +37,7 @@ public class Test01 {
     
     // ArrayList에서 제공하는 메서드를 사용하여 직접 꺼내지 말고 
     // 값을 꺼내주는 객체의 도움을 받으라!
-    // 이렇게 하는 이유? 
+    // 이렇게 하는 이유? 9o
     // => 데이터 목록 객체의 종류(ArrayList, LinkedList, Stack, Queue)에 상관없이 
     //    일관된 방법으로 값을 꺼내기 위함이다.
     Iterator<String> iterator = list1.iterator();

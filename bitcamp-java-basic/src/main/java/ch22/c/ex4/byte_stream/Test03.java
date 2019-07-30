@@ -1,5 +1,5 @@
 // 정리
-package ch22.c.ex4;
+package ch22.c.ex4.byte_stream;
 
 public class Test03 {
   public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class Test03 {
     //       PipedInputStream/PipedOutputStream
     //       PipedReader/PipedWriter
     //       
-    // 2) data processing stream class
+    // 2) data processing stream class //스스로 존재할 수 없다. 
     //    => 데이터를 읽고 쓸 때 중간에서 데이터를 가공하는 클래스
     //    => 데코레이터 역할을 수행한다.
     //    => FilterInputStream/FilterOutputStream 의 서브 클래스이다.

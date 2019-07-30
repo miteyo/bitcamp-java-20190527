@@ -1,4 +1,4 @@
-// 예외처리 연습2 - 호출자에게 전달하기
+//예외 처리 연습 II  - 호출자에게 전달하기
 package ch21.g;
 
 public class Test02_3 {

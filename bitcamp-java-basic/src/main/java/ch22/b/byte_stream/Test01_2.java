@@ -37,11 +37,7 @@ public class Test01_2 {
     }
 
     System.out.println();
-
     in.close();
-
-
-
     System.out.println("출력 완료!");
   }
 }
