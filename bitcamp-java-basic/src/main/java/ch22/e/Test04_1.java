@@ -24,7 +24,7 @@ public class Test04_1 {
     BufferedOutputStream out1 = new BufferedOutputStream(out0);
     ObjectOutputStream out = new ObjectOutputStream(out1) ;
 
-    out.writeInt(students.size()); //어레이 리스트 갯수 출력한 후 통째로 출력
+    out.writeInt(students.size()); 
 
     for (Score s : students) {
       out.writeObject(s);

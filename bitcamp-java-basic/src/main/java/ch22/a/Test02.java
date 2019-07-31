@@ -21,7 +21,7 @@ public class Test02 {
     System.out.println(file.getTotalSpace()); // HDD 전체 용량
     System.out.println(file.getFreeSpace()); // 빈 용량
     System.out.println(file.getUsableSpace()); // 빈 용량 중에서 사용할 수 있는 용량
-    System.out.println(file.length()); // 파일 크기 
+    System.out.println(" 크기는" + file.length()); // 파일 크기 
     
     // 파일이 존재하지 않는 경우 리턴 값은 false이다.
     System.out.println(file.isDirectory());

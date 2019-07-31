@@ -13,7 +13,7 @@ public class Test2_1 {
 
     Score2 score = new Score2();
     score.setName("홍길동");
-    score.setKor(100);
+    score.setKor(90);
     score.setEng(100);
     score.setMath(100);
     score.setSum(score.getKor() + score.getEng() + score.getMath());

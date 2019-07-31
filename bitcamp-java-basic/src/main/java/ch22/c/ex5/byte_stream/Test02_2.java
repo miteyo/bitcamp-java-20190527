@@ -16,7 +16,6 @@ public class Test02_2 {
     
     //위 객체에 primitive 타입의 값을 읽는 기능을 붙인다.
     DataInputStream in = new DataInputStream(other2); //1) long 값줘봐. 5) long 변수 리턴
-    
 
     System.out.println("읽기시작...");
     long start = System.currentTimeMillis();

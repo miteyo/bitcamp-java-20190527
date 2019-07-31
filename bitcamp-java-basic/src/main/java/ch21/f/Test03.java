@@ -32,8 +32,8 @@ public class Test03 {
         // java.lang.AutoCloseable 을 구현한 클래스는 객체를 선언할 수 있다.
         MyResource2 r2 = new MyResource2(); // OK! 
     ) {
-      //System.out.println(r2.divide(10, 2)); 
-      System.out.println(r2.divide(10, 0));
+      System.out.println(r2.divide(10, 2)); 
+      //System.out.println(r2.divide(10, 0));
       
       // try 블록을 벗어나기 전에 close()가 자동 호출된다.
       

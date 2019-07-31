@@ -26,7 +26,7 @@ public class Test04_2 {
     FileInputStream in0 = new FileInputStream("temp/score.data");
     BufferedInputStream in1 = new BufferedInputStream(in0);
     ObjectInputStream in = new ObjectInputStream(in1);
-
+    
       int len = in.readInt();
       
       for (int i = 0; i < len; i++) {
@@ -37,6 +37,7 @@ public class Test04_2 {
         //score.compute();
         students.add(score);
       }
+     
 
       in.close();
     // 그리고 세 학생의 정보를 다음과 같은 형식으로 출력하라.

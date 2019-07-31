@@ -14,7 +14,7 @@ public class Test3_1 {
     Score3 score = new Score3();
     score.setName("홍길동");
     score.setKor(100); // setter 내부에서 compute()를 호출하여 sum과 aver를 자동 계산한다.
-    score.setEng(100);
+    score.setEng(80);
     score.setMath(100);
     
     //출력하기 전에 현재 Score3 인스턴스의 값을 출력해 보자!

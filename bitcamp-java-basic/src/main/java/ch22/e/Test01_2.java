@@ -13,7 +13,7 @@ public class Test01_2 {
     // => java.io.BufferedInputStream 클래스를 사용하라.
     // => java.io.DataInputStream 클래스를 사용하라.
     //
-    Score s1 = null;
+   // Score s1 = null;
     Score s2 = null;
     Score s3 = null;
 
@@ -22,7 +22,7 @@ public class Test01_2 {
     DataInputStream in = new DataInputStream(in1);
 
     // 데이터를 읽을 때는 반드시 파일에 출력한 형식 (file format) 에 맞춰서 읽어야 한다. 국영수로 출력-> 국영수로 입력   
-    s1 = new Score();
+    Score s1 = new Score();
     s1.setName(in.readUTF());
     s1.setKor(in.readInt());
     s1.setEng(in.readInt());

@@ -10,7 +10,7 @@ public class Test07 {
     
     System.out.println(b1 == b2);
     System.out.println(b1.toString());
-    System.out.println(b1); // 파라미터에 넘겨주는 값이 String이 아닐 경우에는                                                println 메소드 안에서 b1이 스트링이 아니면 스트링으로 바꿔서 리턴한다.
+    System.out.println(b1); // 파라미터에 넘겨주는 값이 String이 아닐 경우에는     println 메소드 안에서 b1이 스트링이 아니면 스트링으로 바꿔서 리턴한다.
                             // println() 메서드가 내부에서 해당 값에 대해 toString() 호출하여
                             // 그 리턴 값(String)을 출력한다.
     // 만약에 해당 클래스에 toString() 메서드가 없으면 어떡하나요?
