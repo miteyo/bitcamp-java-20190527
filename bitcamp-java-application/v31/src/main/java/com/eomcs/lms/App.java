@@ -55,7 +55,7 @@ public class App {
       listener.contextInitialized(beanContainer); //옵저버를 실행 할 떄, 옵저버를 담는 바구니를 파라미터로 넘겨준다.
     }
     
-    //옵저버를 
+     // 옵저버에게 보고한 후 옵저버가 준비한 객체를 꺼낸다.
     List<Lesson> lessonList = (List<Lesson>)beanContainer.get("lessonList");
     List<Member> memberList = (List<Member>)beanContainer.get("memberList");
     List<Board> boardList = (List<Board>)beanContainer.get("boardList");

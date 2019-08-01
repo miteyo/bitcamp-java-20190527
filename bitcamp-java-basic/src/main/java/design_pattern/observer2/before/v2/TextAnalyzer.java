@@ -13,9 +13,47 @@ public class TextAnalyzer {
     try {
       int ch;
       int count = 0;
+      int totalLine = 0;
+      boolean isEmpty = true;
+      
+      int totalLinecomment = 0;
+      boolean startLinecomment = false;
+      int countSlash = 0;
+      
       while((ch = in.read()) != -1) { //char ch를 할 경우 -1을 저장하지 못한다. 그래서 int로 받는다.
         count++;
-      }
+        
+        if(ch == '\n') {
+          totalLine++;
+          isEmpty = true;
+        } else {
+          isEmpty = false;
+        }
+        
+        if(!startLinecomment) {
+          if(ch =='/') {
+            if(countSlash == 0) {
+              countSlash++; // 1개
+            } else {
+              totalLinecomment++; //1개
+              startLinecomment = true;
+            }
+          
+          } else {
+            countSlash = 0;
+          }
+          
+        } else if( ch == '\n') {
+          startLinecomment = false;
+        }
+
+        
+        if(!isEmpty) {
+          totalLine++;
+        }
+        
+      }       
+      
       System.out.printf("총 읽은 문자 수: %d\n", count);
       
     } catch (Exception e) {

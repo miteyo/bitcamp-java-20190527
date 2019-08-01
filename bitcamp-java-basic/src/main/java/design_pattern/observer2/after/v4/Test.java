@@ -34,7 +34,7 @@ public class Test {
       l3.displayResult();
       l4.displayResult();
       
-      
+     
     } catch (Exception e) {
       System.out.println("실행 중 오류 발생!");
     }

@@ -1,0 +1,25 @@
+
+plugins {
+
+    id 'java'
+    id 'application'
+    id 'eclipse'
+}
+
+repositories {
+
+    jcenter()
+}
+
+dependencies {
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava:27.1-jre'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+
+application {
+    // Define the main class for the application
+    mainClassName = 'com.eomcs.lms.App'
+}
