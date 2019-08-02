@@ -12,7 +12,7 @@ public class ServerTest {
   public static void main(String[] args) {
     System.out.println("[수업관리 시스템 서버 애플리케이션 TEST]");
 
-    try (Socket socket = new Socket("192.168.0.47", 8888);
+    try (Socket socket = new Socket("192.168.0.68", 8888);
         // 서버와의 입출력을 위해 스트림 객체를 준비한다.
 
         // =>버퍼를 사용할 경우, 데이터를 보내는 쪽에서 출력 스트림을 먼저 준비하라.
