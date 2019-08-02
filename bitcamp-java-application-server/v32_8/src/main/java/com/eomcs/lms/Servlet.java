@@ -1,0 +1,8 @@
+package com.eomcs.lms;
+
+// 클라이언트로 부터 요청을 받았을 때 ServerApp에서 해당 요청을 처리하기 위해 
+// 담당자를 호출하는 규칙
+public interface Servlet{
+  void service(String command) throws Exception;
+   
+}

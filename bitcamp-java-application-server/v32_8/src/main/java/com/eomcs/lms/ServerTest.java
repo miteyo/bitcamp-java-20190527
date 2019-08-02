@@ -58,21 +58,21 @@ public class ServerTest {
       if (!delete()) {
         error();
       }
-
+      
       System.out.println("------------------------------------------");
 
       if (!list()) {
         error();
       }
-
+      
       System.out.println("------------------------------------------");
 
       if (!detail()) {
         error();
       }
-
+      
       System.out.println("------------------------------------------");
-
+      
       member = new Member();
       member.setNo(1);
       member.setName("영아영");
@@ -98,6 +98,10 @@ public class ServerTest {
       if (!quit()) {
         error();
       }
+
+    } catch (RequestException e) { // RequestException 발생시 블록 실행
+      // 서버에서 요청처리에 실패했다면, 서버가 보낸 이유를 받는다.
+      System.out.printf("오류: %s\n", in.readUTF()); // ok가 아닌 경우, 한번 더 읽는다. 지원하지 않는 명령입니다.
 
     } catch (IOException e) {
       // 예외가 발생하면 일단 어디에서 예외가 발생했는지 확인하기 위해 호출 정보를 모두 출력한다.
@@ -196,7 +200,7 @@ public class ServerTest {
     return true;
   }
 
-  private static boolean add(Member m) throws IOException {
+  private static boolean add(Member m) throws IOException, RequestException {
     // 서버에 객체를 전송한다.
     out.writeUTF("/member/add");
     out.writeObject(m);
@@ -210,5 +214,5 @@ public class ServerTest {
     return true;
   }
 
-
+  
 }

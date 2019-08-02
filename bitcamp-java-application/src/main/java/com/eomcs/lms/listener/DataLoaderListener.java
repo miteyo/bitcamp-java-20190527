@@ -224,6 +224,7 @@ public class DataLoaderListener implements ApplicationContextListener {
 
     } catch (IOException e) {
       System.out.println("파일에 데이터를 출력하는 중에 오류 발생!");
+      e.printStackTrace();
     } finally {
       try {
         out2.close();

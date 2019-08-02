@@ -58,21 +58,21 @@ public class ServerTest {
       if (!delete()) {
         error();
       }
-
+      
       System.out.println("------------------------------------------");
 
       if (!list()) {
         error();
       }
-
+      
       System.out.println("------------------------------------------");
 
       if (!detail()) {
         error();
       }
-
+      
       System.out.println("------------------------------------------");
-
+      
       member = new Member();
       member.setNo(1);
       member.setName("영아영");
@@ -210,5 +210,5 @@ public class ServerTest {
     return true;
   }
 
-
+  
 }
