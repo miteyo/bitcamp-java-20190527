@@ -1,20 +1,21 @@
-package com.eomcs.lms.dao;
+package com.eomcs.lms.dao.csv;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.Date;
 import java.util.List;
 import com.eomcs.lms.domain.Board;
 
-public class BoardSerialDao extends AbstractDataSerializer<Board, Integer> {
-  
-  public BoardSerialDao(String file) throws ClassNotFoundException {
+public class BoardCsvDao extends AbstractCsvDataSerializer<Board, Integer> {
+
+  public BoardCsvDao(String file) {
     super(file);
     
     try {
       loadData();
       System.out.println("게시물 데이터 로딩 완료!");
       
-    } catch (IOException e) {
+    } catch (Exception e) {
       System.out.println("게시물 데이터 로딩 중 오류 발생!");
     }
   }
@@ -34,6 +35,31 @@ public class BoardSerialDao extends AbstractDataSerializer<Board, Integer> {
     }
   }
   
+  // 수퍼 클래스에서 template method(loadSave())를 정의하고 
+  // 객체 생성의 구체적인 구현은 서브 클래스에서 완성해야 한다.
+  @Override
+  protected Board createObject(String[] values) {
+    // 파일에서 읽어 들인 데이터의 CSV 형식은 다음과 같다고 가정하자!
+    // => 번호,내용,생성일,조회수
+    //
+    Board board = new Board();
+    
+    board.setNo(Integer.parseInt(values[0]));
+    board.setContents(values[1]);
+    board.setCreatedDate(Date.valueOf(values[2]));
+    board.setViewCount(Integer.parseInt(values[3]));
+    
+    return board;
+  }
+  
+  @Override
+  protected String createCSV(Board obj) {
+    return String.format("%d,%s,%s,%d",
+        obj.getNo(), 
+        obj.getContents(),
+        obj.getCreatedDate(),
+        obj.getViewCount());
+  }
 
   @Override
   public int indexOf(Integer key) {
@@ -47,12 +73,12 @@ public class BoardSerialDao extends AbstractDataSerializer<Board, Integer> {
     return -1;
   }
 
-  public int insert(Board board) throws Exception {
+  public int add(Board board) throws Exception {
     list.add(board);
     return 1;
   }
 
-  public List<Board> findAll() throws Exception {
+  public List<Board> list() throws Exception {
     return list;
   }
 
@@ -67,12 +93,12 @@ public class BoardSerialDao extends AbstractDataSerializer<Board, Integer> {
     int index = indexOf(board.getNo());
     if (index == -1) // 못찾았으면 return 0
       return 0;
-    
+
     list.set(index, board);
     return 1;
   }
 
-  public int delete(int no) throws Exception {
+  public int remove(int no) throws Exception {
     int index = indexOf(no);
     if (index == -1)
       return 0;
