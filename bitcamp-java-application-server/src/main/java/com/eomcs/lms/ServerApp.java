@@ -1,4 +1,4 @@
-// v33_2: Stateful 통신 방식을 Stateless(요청-응답하면 끊어버린다. 이전 내용을 모름) 통신 방식으로 변경하여 더 많은 클라이언트 요청 처리
+// v33_3: 클라이언트 요청마다 서블릿 객체를 만들지 않기 (서블릿 수정, APpinitListener 수정)
 package com.eomcs.lms;
 
 import java.io.ObjectInputStream;
@@ -7,18 +7,20 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 import com.eomcs.lms.context.ServletContextListener;
-import com.eomcs.lms.dao.BoardDao;
-import com.eomcs.lms.dao.LessonDao;
-import com.eomcs.lms.dao.MemberDao;
 import com.eomcs.lms.servlet.BoardServlet;
 import com.eomcs.lms.servlet.LessonServlet;
 import com.eomcs.lms.servlet.MemberServlet;
+import com.eomcs.lms.servlet.Servlet;
 
 public class ServerApp {
 
   ArrayList<ServletContextListener> listeners = new ArrayList<>();
   int port;
+
+  // 서버가 실행되는 동안 공유할 객체를 보관하는 저장소를 준비한다.
+  HashMap<String, Object> servletContext = new HashMap<>();
 
   public ServerApp(int port) {
     this.port = port;
@@ -30,13 +32,14 @@ public class ServerApp {
     try (ServerSocket serverSocket = new ServerSocket(this.port)) {
       System.out.println("서버 시작!");
 
-      // 서버가 실행되는 동안 공유할 객체를 보관하는 저장소를 준비한다.
-      HashMap<String, Object> servletContext = new HashMap<>();
-
       // 서버가 시작되면 보고를 받을 관찰자(observer)에게 보고한다.
       for (ServletContextListener listener : listeners) {
         listener.contextInitialized(servletContext);
       }
+      //
+      // BoardServlet boardServlet = (BoardServlet) servletContext.get("/board/");
+      // MemberServlet memberServlet = (MemberServlet) servletContext.get("/member/");
+      // LessonServlet lessonServlet = (LessonServlet) servletContext.get("/lesson/");
 
       while (true) {
         try (Socket clientSocket = serverSocket.accept();
@@ -44,30 +47,22 @@ public class ServerApp {
             ObjectOutputStream out = new ObjectOutputStream(clientSocket.getOutputStream())) {
 
           System.out.println("클라이언트와 연결되었음.");
-
-          BoardDao boardDao = (BoardDao) servletContext.get("boardDao");
-          MemberDao memberDao = (MemberDao) servletContext.get("memberDao");
-          LessonDao lessonDao = (LessonDao) servletContext.get("lessonDao");
-
-          BoardServlet boardServlet = new BoardServlet(boardDao, in, out); 
-          MemberServlet memberServlet = new MemberServlet(memberDao, in, out);
-          LessonServlet lessonServlet = new LessonServlet(lessonDao, in, out);
+          //
+          // BoardDao boardDao = (BoardDao) servletContext.get("boardDao");
+          // MemberDao memberDao = (MemberDao) servletContext.get("memberDao");
+          // LessonDao lessonDao = (LessonDao) servletContext.get("lessonDao");
 
           // 클라이언트가 보낸 명령을 읽는다.
           String command = in.readUTF();
           System.out.println(command + " 요청 처리중...");
 
-          if (command.startsWith("/board/")) {
-            boardServlet.service(command);
+          Servlet servlet = null;
 
-          } else if (command.startsWith("/member/")) {
-            memberServlet.service(command);
-
-          } else if (command.startsWith("/lesson/")) {
-            lessonServlet.service(command);
-
-          } else if (command.equals("serverstop")) {
+          if (command.equals("serverstop")) {
             break;
+
+          } else if ((servlet = findServlet(command)) != null) { // null이 아니다? 명령어를 처리할 서블릿을 찾았다.
+            servlet.service(command, in, out);
 
           } else {
             out.writeUTF("fail");
@@ -80,7 +75,6 @@ public class ServerApp {
         System.out.println("클라이언트와 연결을 끊었음.");
       } // while 끝나면 연결 끊고 다음 클라이언트
 
-      
       // 서버가 종료될 때 관찰자(observer)에게 보고한다.
       for (ServletContextListener listener : listeners) {
         listener.contextDestroyed(servletContext);
@@ -90,7 +84,6 @@ public class ServerApp {
       e.printStackTrace();
     }
 
-
     System.out.println("서버 종료!");
   }
 
@@ -99,6 +92,21 @@ public class ServerApp {
   //
   public void addServletContextListener(ServletContextListener listener) {
     listeners.add(listener);
+  }
+
+  private Servlet findServlet(String command) { // 명령어를 주면 명령어를 처리할 서블릿을 찾는다.
+    Set<String> keys = servletContext.keySet(); // 키 값을 set에 담아서 리턴
+
+    // 명령어에 포함된 키를 찾아서 해당 키로 저장된 서블릿을 꺼낸다.
+    // => (/board/list) 의 키는 (/board/)
+
+    for (String key : keys) {
+      if (command.startsWith(key)) {
+        return (Servlet) servletContext.get(key);
+      }
+    }
+    // 예: /file/llist
+    return null;
   }
 
   public static void main(String[] args) {
