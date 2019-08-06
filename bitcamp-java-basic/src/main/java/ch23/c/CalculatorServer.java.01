@@ -18,7 +18,7 @@ public class CalculatorServer {
               new InputStreamReader(socket.getInputStream()));
           PrintStream out = new PrintStream(socket.getOutputStream());) {
         
-        String[] input = in.readLine().split(" ");
+        String[] input = in.readLine().split(" "); //공백으로 나눈다.
         
         int a = Integer.parseInt(input[0]);
         String op = input[1];

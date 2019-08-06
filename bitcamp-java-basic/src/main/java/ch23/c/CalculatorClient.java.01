@@ -37,7 +37,7 @@ public class CalculatorClient {
       out.println("10 + 30");
       out.flush();
       
-      String input = in.readLine();
+      String input = in.readLine(); // 서버로부터 한줄을 읽고 출력한다
       System.out.println(input);
       
     } catch (Exception e) {

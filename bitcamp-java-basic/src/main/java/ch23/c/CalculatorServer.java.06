@@ -14,7 +14,7 @@ public class CalculatorServer {
       System.out.println("서버 실행 중...");
       
       while (true) {
-        processRequest(serverSocket.accept());
+        processRequest(serverSocket.accept()); //야 내가 클라이언트 소켓 줄테니까 그 요청 처리해.
       }
       
     } catch (Exception e) {

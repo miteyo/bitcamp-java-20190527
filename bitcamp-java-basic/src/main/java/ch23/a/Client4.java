@@ -17,7 +17,7 @@ public class Client4 {
     Socket socket = new Socket();
     System.out.println("소켓 생성됨.");
     
-    SocketAddress socketAddress = new InetSocketAddress("localhost", 8888);
+    SocketAddress socketAddress = new InetSocketAddress("192.168.0.4", 8888);
     
     System.out.println("서버와 연결 중...");
     socket.connect(socketAddress, 20000); // timeout : milliseconds

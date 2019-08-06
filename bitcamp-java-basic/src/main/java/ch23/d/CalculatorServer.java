@@ -51,7 +51,7 @@ public class CalculatorServer {
               out.printf("%s 연산자를 지원하지 않습니다.\n", op);
               out.flush();
               continue;
-          }
+          } //응답 후 연결 끊기
           
           out.printf("결과는 %d 입니다.\n", result);
           out.flush();

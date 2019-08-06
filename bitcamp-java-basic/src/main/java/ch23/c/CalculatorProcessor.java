@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 
-public class CalculatorProcessor {
+public class CalculatorProcessor { 
   Socket socket;
   BufferedReader in;
   PrintStream out;

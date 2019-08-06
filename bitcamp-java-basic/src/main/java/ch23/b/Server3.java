@@ -43,7 +43,7 @@ public class Server3 {
               new FileOutputStream(file))) {
           
           System.out.println("파일을 받는 중...");
-          for (long i = 0; i < fileLen; i++) {
+          for (long i = 0; i < fileLen; i++) { //read()는 데이터가 올 것이라 생각하고 계속 기다린다. 파일 갯수를 알려주면 갯수만큼만 돌림
             fileOut.write(in.read()); // 소켓에서 읽은 바이트를 버퍼에 저장한다.
             // 버퍼가 모두 차면 자동으로 파일에 출력할 것이다.
           }
