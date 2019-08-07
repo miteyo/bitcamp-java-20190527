@@ -27,7 +27,7 @@ import java.util.Scanner;
 안녕히 가세요! <== 서버의 응답
 
  */
-public class CalculatorClient {
+public class CalculatorClient06 {
   public static void main(String[] args) {
     
     try (Scanner keyboard = new Scanner(System.in);

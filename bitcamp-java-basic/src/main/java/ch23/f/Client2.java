@@ -28,6 +28,7 @@ public class Client2 {
             bytes, // 보내는 데이터(바이트 배열) 
             bytes.length, // 바이트 배열의 크기
             InetAddress.getByName("localhost"), // 받는 이의 주소
+            //DNS 서버에 가서 www.naver.com 이름을 갖는 컴퓨터의 아이디 어드레스를 알아내서 ip주소를 놓는다. 
             8888 // 받는 이의 포트 번호 
             );
 

@@ -8,7 +8,7 @@ public class Test01 {
   public static void main(String[] args) throws Exception {
     // 웹에서 자원의 위치를 표현하는 방법
     // => [프로토콜]://서버주소:포트번호/자원의경로
-    // => 프로토콜 : http, https
+    // => 프로토콜 : http, https (전자: 암호화X 후자: 중간에 가로채도 못본다)
     // => 서버주소 : IP 주소(예: 192.168.0.1), 서버도메인주소(예: www.bitcamp.co.kr)
     // => 포트번호 : 80(생략할 수 있다), 8080(프록시 서버) 등
     // => 자원의 경로: /index.html, /board/list.do 등

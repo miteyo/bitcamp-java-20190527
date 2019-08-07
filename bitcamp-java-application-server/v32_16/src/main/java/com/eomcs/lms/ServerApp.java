@@ -39,8 +39,6 @@ public class ServerApp {
         listener.contextInitialize(servletContext);
       }
 
-
-
       try (Socket clientSocket = serverSocket.accept();
           ObjectOutputStream out = new ObjectOutputStream(clientSocket.getOutputStream());
           ObjectInputStream in = new ObjectInputStream(clientSocket.getInputStream())) {

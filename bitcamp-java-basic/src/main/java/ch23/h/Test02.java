@@ -14,7 +14,7 @@ public class Test02 {
     // => 자원의 경로: /index.html, /board/list.do 등
     
     // 자바에서 URL을 저장하기
-    URL url = new URL("http://www.bitcamp.co.kr:80/a/b/c/index.html#side");
+    URL url = new URL("http://www.bitcamp.co.kr:80/a/b/c/index.html#side");// index.html 문서 내.에.서.side위치
     
     System.out.printf("프로토콜: %s\n", url.getProtocol());
     System.out.printf("서버주소: %s\n", url.getHost());

@@ -14,7 +14,7 @@ public class Test05 {
     URL url = new URL("https://www.naver.com");
     
     // URL 정보를 가지고 HTTP 요청을 수행할 객체를 얻는다.
-    URLConnection con = url.openConnection();
+    URLConnection con = url.openConnection(); // url이 아닌 con이 요청하도록
     
     // 웹서버와 연결한 후 HTTP 요청한다.
     con.connect();
