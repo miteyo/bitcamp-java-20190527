@@ -16,14 +16,12 @@ public class Test03 {
     // enumerate(스레드를 담을 배열, 하위 스레드 그룹에 소속된 것도 포함할 것인지 여부)
     Thread[] threadList = new Thread[10];
     int size = 0;
-    size = group.enumerate(threadList, false);
+    size = group.enumerate(threadList, false); // false: 직계자식들만 뽑아라(main 안에 main 말고 다른 것이 뭐가 있는지 추출)
     
     for (int i = 0; i < size; i++) {
       System.out.println("  => " + threadList[i].getName() + "(T)");
     }
-    
   }
-
 }
 
 // JVM의 스레드 계층도:

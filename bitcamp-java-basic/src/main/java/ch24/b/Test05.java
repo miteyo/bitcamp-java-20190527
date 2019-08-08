@@ -23,7 +23,7 @@ public class Test05 {
 }
 
 // JVM의 스레드 계층도:
-// system(TG)
+// system(TG) //최상위 스레드 그룹
 //   => main(TG)
 //      => main(T)
 

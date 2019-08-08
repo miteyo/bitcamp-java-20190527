@@ -20,7 +20,7 @@ public class Test04 {
     t.start(); // => Running 상태
     
     // t 스레드가 dead 상태가 될 때까지 기다린다.
-    t.join();
+    t.join(); //t스레드의 작업이 끝날때 까지 main스레드는 기다린다.
     
     for (int i = 0; i < 1000; i++) {
       System.out.printf("main() ~~~~> %d\n", i);

@@ -137,10 +137,7 @@ public class ServerApp {
 
       System.out.println("클라이언트와 연결을 끊었음.");
     }
-
-    
   }
-
 
 
   public static void main(String[] args) {

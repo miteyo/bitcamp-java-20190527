@@ -19,12 +19,12 @@ public class Account {
     // => 크리티컬 섹션에 해당하는 메서드나 코드 블록에 sychronized 키워드를 붙여 
     //    한 번에 한 스레드만 진입할 수 있도록 lock을 건다.
     // 
-    double temp = this.balance;
+    double temp = this.balance; //1000000
     
     if (temp - money < 0)
       return 0;
     
-    temp = temp - money;
+    temp = temp - money; // 100000-100
     
     this.balance = temp;
     

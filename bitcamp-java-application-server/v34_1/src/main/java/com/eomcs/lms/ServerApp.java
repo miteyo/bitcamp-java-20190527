@@ -9,7 +9,6 @@ import com.eomcs.lms.context.ServletContextListener;
 
 public class ServerApp {
 
-
   ArrayList<ServletContextListener> listeners = new ArrayList<>();
   int port;
 

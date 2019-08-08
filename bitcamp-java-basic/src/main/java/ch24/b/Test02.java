@@ -9,7 +9,7 @@ public class Test02 {
     // "main" 스레드의 그룹은?
     //
     Thread currThread = Thread.currentThread();
-    ThreadGroup group = currThread.getThreadGroup();
+    ThreadGroup group = currThread.getThreadGroup(); //스레드 그룹에 대한 정보 리턴
     
     System.out.printf("스레드 그룹명: %s\n", group.getName());
     

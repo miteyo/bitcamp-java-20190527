@@ -14,10 +14,10 @@ public class Test03 {
     //                               |  |  run() 메서드 종료
     //                               |  V
     //                               Dead
-    // Running 상태?
+    // Running 상태? //실행중이거나 ~! cpu를 기다리고 있는 상태!
     // - CPU를 받아서 실행 중이거나 CPU를 받을 수 있는 상태
     //
-    // Not Runnable 상태?
+    // Not Runnable 상태? /sleep(), wait()
     // - CPU를 받지 않는 상태
     // 
     // run() 메서드 종료 후 다시 running 상태로 돌아갈 수 없다. 
@@ -47,7 +47,7 @@ public class Test03 {
     
     // 주의!
     // => dead 상태에서 다시 실행할 수 없다.
-    //t.start(); // 예외 발생!
+    t.start(); // 예외 발생!
     
     for (int i = 0; i < 1000; i++) {
       System.out.printf("main() ~~~~> %d\n", i);

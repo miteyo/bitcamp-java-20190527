@@ -36,12 +36,12 @@ public class Test06 {
 
 // JVM의 스레드 계층도:
 // system(TG)
-//   ==> Reference Handler(T)
-//   ==> Finalizer(T)
-//   ==> Signal Dispatcher(T)
-//   main(TG)
+//   ==> Reference Handler(T) //인스턴스의 주소를 몇개의 변수가 갖고있는지
+//   ==> Finalizer(T)         // 가비지 컬렉터 처럼 내부적 메모리가 부족하면 청소
+//   ==> Signal Dispatcher(T) 
+//   main(TG)               
 //     ==> main(T) : main() 메서드를 호출한다.
-//   InnocuousThreadGroup(TG)
+//   InnocuousThreadGroup(TG) //
 //     ==> Common-Cleaner(T)
 
 

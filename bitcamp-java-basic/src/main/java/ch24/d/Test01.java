@@ -1,5 +1,5 @@
 package ch24.d;
-
+//synchronized를 하지 않으면 여러 스택이 공통의 Heap 변수를 사용한다 -> 문제있음(*Critical  Section)
 public class Test01 {
 
   public static void main(String[] args) {
