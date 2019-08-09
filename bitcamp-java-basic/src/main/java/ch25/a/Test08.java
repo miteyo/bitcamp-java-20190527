@@ -16,14 +16,14 @@ public class Test08 {
       try (Statement stmt = con.createStatement()) {
         
         try (ResultSet rs = stmt.executeQuery(
-            "select * from x_board order by board_id desc")) {
+            "select * from x_board order by board_id desc")) {// desc역순 - 내림차순 // by view_count desc: 조회수 높은순
         
           while (rs.next()) {
             // 레코드에서 컬럼 값을 꺼낼 때 컬럼 번호를 지정하는 것 보다 
             // 컬럼의 이름을 지정하는 것이 유지보수에 더 좋다.
             //
             System.out.printf("%d, %s, %s, %s, %d\n", 
-                rs.getInt("board_id"), 
+                rs.getInt("board_id"), // (컬럼이름)
                 rs.getString("title"), 
                 rs.getString("contents"), 
                 rs.getDate("created_date"),

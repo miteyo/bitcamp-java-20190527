@@ -24,6 +24,7 @@ public class ServerApp {
   // 스레드 풀
   ExecutorService executorService = Executors.newCachedThreadPool();
 
+
   public ServerApp(int port) {
     this.port = port;
   }
@@ -57,6 +58,7 @@ public class ServerApp {
     } catch (Exception e) {
       e.printStackTrace();
     }
+
   }
 
   public void addServletContextListener(ServletContextListener listener) {
@@ -75,7 +77,7 @@ public class ServerApp {
     return null;
   }
 
-  //serverstop 명령처리
+  // serverstop 명령처리
   private void serverstop() {
 
     // 서버가 종료될 때 관찰자(observer)에게 보고한다.

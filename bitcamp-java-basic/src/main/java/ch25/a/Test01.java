@@ -26,8 +26,8 @@ public class Test01 {
     // 
     
     
-    // 1) java.sql.Driver 구현체를 생성하여 JDBC 드라이버 관리자에 등록한다.
-    // => Driver 구현체는 JDBC에 정보를 제공하는 클래스이다.
+    // 1) java.sql.Driver 구현체의 인스턴스를 생성하여 JDBC 드라이버 관리자에 등록한다.
+    // => Driver 구현체는 JDBC의 정보를 제공하는 클래스이다.
     // => 또는 DBMS에 연결을 수행하는 객체이다.
     // => MariaDB의 JDBC 드라이버에서 org.mariadb.jdbc.Driver 클래스가 이 구현체이다.
     try {
@@ -49,7 +49,7 @@ public class Test01 {
     //    username => 데이터베이스를 사용할 수 있는 DBMS에 등록된 사용자. 
     //    password => 암호
     //
-    try (Connection con = DriverManager.getConnection(
+    try (Connection con = DriverManager.getConnection( //리턴값은 인터페이스가 구현한 클래스의 객체가 리턴된다.(그 클래스가 무엇인지 중요하지 않다)
         "jdbc:mariadb://localhost/bitcampdb", "bitcamp", "1111")) {
       System.out.println("DBMS에 연결 성공!");
       

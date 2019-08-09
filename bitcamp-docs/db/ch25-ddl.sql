@@ -7,9 +7,10 @@ drop table if exists x_board_file restrict;
 
 -- 게시판 테이블 생성
 create table x_board (
-  board_id int not null primary key auto_increment,
+  board_id int not null primary key auto_increment, 
+  --not null: 값을 빼면 안되며 반드시 값을 넣어야한다 /auto_increment: 값을 입력하지 않아도 자동입력 /primary key:중복값 안된다.
   title varchar(255) not null,
-  contents text null,
+  contents text null, -- 값을 안넣어도 된다.
   created_date datetime null default now(),
   view_count int null default 0
 );
@@ -17,13 +18,13 @@ create table x_board (
 -- 게시물 첨부파일 테이블 생성
 create table x_board_file (
   board_file_id int not null primary key auto_increment,
-  file_path varchar(255) not null,
-  board_id int not null,
+  file_path varchar(255) not null, --파일의 경로만 데이터베이스에 저장/ 파일은 파일 시스템에 
+  board_id int not null, --
   constraint fk_board_file foreign key (board_id) references x_board(board_id)
 );
 
 -- 게시물 데이터 입력 
-insert into x_board(board_id, title, contents)
+insert into x_board(board_id, title, contents) -- board_id, title은 not null
 values(1, '제목1', '내용');
 
 insert into x_board(board_id, title, contents)

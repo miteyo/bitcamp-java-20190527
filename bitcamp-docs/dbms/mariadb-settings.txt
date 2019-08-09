@@ -85,7 +85,7 @@ mariadb에서는 default 키워드를 사용하지 않는다.
   COLLATE utf8_general_ci;
   
 ## MySQL 사용자에게 데이터베이스 사용 권한 부여
-> GRANT ALL ON 데이터베이스명.* TO '사용자아이디'@'서버주소';
+> GRANT ALL ON 데이터베이스명.* TO '사용자아이디'@'서버주소';  //GRANT ALL 모든 권한을 부여하겠다.
 > GRANT ALL ON studydb.* TO 'study'@'localhost';
 
 ## 데이터베이스 목록 조회

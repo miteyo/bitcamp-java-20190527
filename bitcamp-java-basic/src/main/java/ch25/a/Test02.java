@@ -16,7 +16,7 @@ public class Test02 {
       // 이 방식의 장점은 소스 코드에 특정 클래스를 지정하지 않는다는 것이다.
       // 클래스 이름을 문자열로 전달할 수 있기 때문에 
       // 특정 클래스에 종속되지 않게 작성할 수 있다.
-      Class.forName("org.mariadb.jdbc.Driver");
+      Class.forName("org.mariadb.jdbc.Driver"); // Class.forName(클래스 로딩 명령어 ( 이 클래스에 대한 driver 클래스의 static 블록이 실행되면서 드라이버 등록
       
     } catch (Exception e) {
       System.out.println("MariaDB의 java.sql.Driver 구현체를 등록하는 중에 오류 발생!");

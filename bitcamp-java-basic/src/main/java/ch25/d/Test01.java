@@ -1,4 +1,4 @@
-// insert 한 후 auto increment PK 값 리턴 받기 
+// insert 한 후 auto increment PK 값 리턴 받기  (프라이머리키값)
 package ch25.d;
 
 import java.sql.Connection;
@@ -30,7 +30,7 @@ public class Test01 {
       // => prepareStatement(sql, 자동생성된 PK 값 리턴 여부)
       try (PreparedStatement stmt = con.prepareStatement(
           "insert into x_board(title, contents) values(?,?)", 
-          Statement.RETURN_GENERATED_KEYS)) {
+          Statement.RETURN_GENERATED_KEYS)) { // 
         
         stmt.setString(1, title);
         stmt.setString(2, contents);

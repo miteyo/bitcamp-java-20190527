@@ -20,13 +20,14 @@ public class Test07 {
         // => 서버의 select 실행 결과를 가져올 때 사용하는 도구이다.
         // => 단 한 개씩 가져온다. 한 번에 모두 가져오는 것이 아니다.
         //
-        try (ResultSet rs = stmt.executeQuery(
+        try (ResultSet rs = stmt.executeQuery( //결과를 가져올 수 있는 도구를 리턴한다, 결과값이 들어있지 않다.
             "select * from x_board order by board_id desc")) {
         
           // next() 
-          // - 서버에서 한 개의 row(record)를 가져온다.
+          // - 서버에서 한 개의 row(record)를 가져온다.      
           // - 만약 가져올 레코드가 없으면 false를 리턴한다. 
-          while (rs.next()) {
+          while (rs.next()) { //*한줄을 가져온다*
+            
             // 서버에서 받아 온 레코드에서 컬럼 값 꺼내기
             // => getXxx(컬럼명) 또는 getXxx(컬럼 번호)
             // => 정수값 컬럼 : getInt(), varchar/char/text 문자열 컬럼: getString()
@@ -35,10 +36,10 @@ public class Test07 {
             // => 레코드에서 컬럼값을 꺼낼 때 컬럼의 번호는 1부터 시작한다.
             //
             System.out.printf("%d, %s, %s, %s, %d\n", 
-                rs.getInt(1), // board_id
+                rs.getInt(1), // board_id (컬럼값)
                 rs.getString(2), // title
                 rs.getString(3), // contents
-                rs.getDate(4), // created_date
+                rs.getDate(4), // created_date //날짜컬럼은 날짜값으로 받자.
                 rs.getInt(5)); // view_count
           }
         }
