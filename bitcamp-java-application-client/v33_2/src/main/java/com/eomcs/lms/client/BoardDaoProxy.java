@@ -111,7 +111,7 @@ public class BoardDaoProxy implements BoardDao {
   }
 
   public static void main(String[] args) throws Exception {
-    BoardDaoProxy daoProxy = new BoardDaoProxy("localhost", 8888);
+//    BoardDaoProxy daoProxy = new BoardDaoProxy("localhost", 8888);
     // 입력테스트
     // Board board = new Board();
     // board.setNo(100);
@@ -125,10 +125,10 @@ public class BoardDaoProxy implements BoardDao {
     // System.out.println(board);
     // //
     // 목록조회테스트
-    List<Board> boards = daoProxy.findAll();
-    for (Board board : boards) {
-      System.out.println(board);
-    }
+//    List<Board> boards = daoProxy.findAll();
+//    for (Board board : boards) {
+//      System.out.println(board);
+//    }
 
     // //변경테스트
     // Board board = new Board();

@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Test01 {
+public class Test01 { 
 
   public static void main(String[] args) {
     // DBMS에 연결하기 

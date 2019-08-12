@@ -4,7 +4,7 @@ package ch25.a;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class Test03 {
+public class Test03 { 
 
   public static void main(String[] args) {
     // DriverManager의 getConnection()을 호출할 때 

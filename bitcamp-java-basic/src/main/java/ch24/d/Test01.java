@@ -13,7 +13,7 @@ public class Test01 {
     kang102.start();
     kang103.start();
     
-    // 세마포어(n); semaphore
+    // 세마포어(n); semaphore 
     // => 크리티컬 섹션에 진입할 수 있는 스레드의 수를 지정한다.
     // => 자바에서는 세마포어를 지원하지 않는다.
     // => 개발자가 직접 처리해야 한다.
