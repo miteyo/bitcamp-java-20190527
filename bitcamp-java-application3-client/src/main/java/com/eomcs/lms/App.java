@@ -1,4 +1,4 @@
-// client-v36_2: DAO들이 Connection 객체를 공유한다. DBMS와의 연결방식을 Stateful방식으로 변경
+// client-v37: DAO들이 Connection 객체를 공유한다. DBMS와의 연결방식을 Stateful방식으로 변경
 package com.eomcs.lms;
 
 import java.sql.Connection;
@@ -55,7 +55,7 @@ public class App {
     BoardDao boardDao = new BoardDaoImpl(con);
     MemberDao memberDao = new MemberDaoImpl(con);
     LessonDao lessonDao = new LessonDaoImpl(con);
-
+    
     keyScan = new Scanner(System.in);
 
     Deque<String> commandStack = new ArrayDeque<>();
