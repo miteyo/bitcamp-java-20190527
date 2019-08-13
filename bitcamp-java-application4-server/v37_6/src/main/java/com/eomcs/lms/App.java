@@ -1,4 +1,4 @@
-// server-v37_6 : 스레드풀 적용하기 (48, 114 -line)
+// server-v37_6 : 스레드풀 적용하기 (48-line)
 package com.eomcs.lms;
 
 import java.io.BufferedReader;
