@@ -26,7 +26,7 @@ insert into test1(name,class,working) values('ooo','java101','N');
 ## select
 - 테이블의 데이터를 조회할 때 사용하는 명령이다.
 ```
-/* 모든 컬럼 값 조회하기. 컬럼 순서는 테이블을 생성할 때 선언한 순서이다.*/
+/* 모든 컬럼 값 조회하기. 컬럼 순서는 테이블을 생성할 때 선언한 순서이다.*/   모든 컬럼값을 프로젝션한다.
 select * from 테이블;
 select * from test1;
 
@@ -153,7 +153,7 @@ select (4=5), (4!=5), (4>5), (4>=5), (4<5), (4<=5), (4<>5);
 ### between 값1 and 값2 
 - 두 값 사이(두 값도 포함)에 있는지 검사한다.
 ```
-select 5 between 3 and 5;
+select 5 between 3 and 5; /*5는 3과 5사이에 있는 값이냐? treu :1*/
 ```
 
 ### like

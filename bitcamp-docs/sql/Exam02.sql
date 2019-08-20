@@ -8,7 +8,7 @@
 /* 연락처 테이블 생성 */
 create table test1 (
   no int not null,
-  name varchar(20) not null,
+  na) not null,
   tel varchar(20) not null,
   fax varchar(20),
   pstno varchar(5),

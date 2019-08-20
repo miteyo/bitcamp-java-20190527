@@ -4,11 +4,11 @@ DB 객체(테이블, 뷰, 함수, 트리거 등)를 생성, 변경, 삭제하는
 - 데이터베이스(database) = 스키마(schema)
 - 테이블(table)
 - 뷰(view)
-- 트리거(trigger)
+- 트리거(trigger) --리스너
   - 특정 조건에서 자동으로 호출되는 함수
   - 특정 조건? SQL 실행 전/후 등
-- 함수(function)
-- 프로시저(procedure)
+- 함수(function) -- 리턴값 존재
+- 프로시저(procedure) --리턴 없음
 - 인덱스(index)
 
 ## 데이터베이스
@@ -32,7 +32,7 @@ DB 객체(테이블, 뷰, 함수, 트리거 등)를 생성, 변경, 삭제하는
 
 예) 
 > create table test01 (
-    name varchar(50) not null,
+    name varchar(50) not null, --not null : 필수입력 항목
     kor int not null,
     eng int not null,
     math int not null,
@@ -168,12 +168,12 @@ DB 객체(테이블, 뷰, 함수, 트리거 등)를 생성, 변경, 삭제하는
 고정 크기와 가변 크기 비교:
 > insert into test1(c1) values('abc');
 > insert into test1(c2) values('abc');
-> select * from test1 where c1='abc'; 
+> select * from test1 where c1='abc'; ㄴㄷ
 DBMS 중에는 고정 크기인 컬럼의 값을 비교할 때 빈자리까지 검사하는 경우도 있다.
 즉 c1='abc'에서는 데이터를 찾지 못하고, c1='abc  '여야만 데이터를 찾는 경우가 있다.
 그러나 mysql은 고정크기 컬럼이더라도 빈자리를 무시하고 데이터를 찾는다.
 
-#### text(65535), mediumtext(약 1.6MB), longtext(약 2GB)
+#### text(65535), mediumtext(약 1.6MB), longtext(약 2GB) -- 이미지파일은 base64로 문자화된다=> longtext 사용
 - 긴 텍스트를 저장할 때 사용하는 컬럼 타입이다.
 - 오라클의 경우 long 타입과 CLOB(character large object) 타입이 있다.
 
@@ -227,6 +227,8 @@ DBMS 중에는 고정 크기인 컬럼의 값을 비교할 때 빈자리까지 �
 > insert into test1(c3) values('T'); /* error */
 > insert into test1(c3) values('F'); /* error */
 
+> insert into test1(c3) values(true); /* true */
+> insert into test1(c3) values(false); /* false */
 > insert into test1(c3) values('1'); /* true */
 > insert into test1(c3) values('0'); /* false */
 > insert into test1(c3) values(1); /* true */
@@ -286,7 +288,7 @@ DBMS 중에는 고정 크기인 컬럼의 값을 비교할 때 빈자리까지 �
   kor int,
   eng int,
   math int,
-  constraint test1_pk primary key(name, age)
+  constraint test1_pk primary key(name, age)  -- constraint test1_pk: 제약조건  조건명
   );
 
 - 입력 테스트:
@@ -325,6 +327,9 @@ DBMS 중에는 고정 크기인 컬럼의 값을 비교할 때 빈자리까지 �
 - PK는 아니지만 PK처럼 중복을 허락하지 않는 컬럼을 지정할 때 사용한다.
 - 그래서 PK를 대신해서 사용할 수 있는 key라고 해서 "대안키(alternate key)"라고 부른다.
 
+/* unique 중복되지 않도록 지정, 변경가능*/
+/* primary 변경불가*/
+
 #### unique = alternate key(대안키)
 > create table test1(
   no int primary key,
@@ -333,7 +338,7 @@ DBMS 중에는 고정 크기인 컬럼의 값을 비교할 때 빈자리까지 �
   kor int,
   eng int,
   math int,
-  constraint test1_uk unique (name, age)
+  constraint test1_uk unique (name, age)    /*둘다 모두 값이 같을 때만 중복으로 본다.*/
   );
 
 - 입력 테스트:
@@ -423,7 +428,7 @@ alter table test1
 - 컬럼에 옵션 추가
 ```
 alter table test1
-  modify column name varchar(20) not null,
+  modify column name varchar(20) not null, /*변경한다고 해서 데이터타입(varchar)을 생략하면 안된다.*/
   modify column age int not null,
   modify column kor int not null,
   modify column eng int not null,
@@ -440,7 +445,7 @@ insert into test1(no,name,age,kor,eng,math,sum,aver)
 insert into test1(no,name,age,kor,eng,math,sum,aver)
   values(2,'bbb',21,100,100,100,300,100);
 
-/* 다음은 name과 age의 값이 중복되기 때문에 입력 거절된다.*/  
+/* 다음은 name과 age의 값이 중복되기 때문에 입력 거절된다.*/    /*무결성제약조건*/
 insert into test1(no,name,age,kor,eng,math,sum,aver)
   values(3,'bbb',21,100,100,100,300,100);  
 ```
