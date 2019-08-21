@@ -7,7 +7,7 @@
 4) OUTER JOIN
 */
 
-/* cross join : 두 테이블의 데이터를 1:1로 모두 연결한다.*/
+/* cross join : 두 테이블의 데이터를 1:1로 모두 연결한다.*/ 한쪽테이블의 데이터와 다른쪽의 데이터를 조건 없이 조인하는 것.(쓰레기값 발생)
 select mno, name from memb;
 select mno, work, bank from stnt;   
 
@@ -36,7 +36,7 @@ select m.mno, name, s.mno, work, bank
 from memb m, stnt s;
 
 
-/* natural join: 같은 이름을 가진 컬럼 값을 기준으로 연결한다. */
+/* natural join: 같은 이름을 가진 컬럼 값을 기준으로 연결한다. */ 한쪽테이블과 다른쪽 테이블의 이름이 같을 경우, 같은 이름의 컬럼값이 같을 때만 조인한다.
 select m.mno, name, s.mno, work, bank
 from memb m natural join stnt s;   
 
@@ -67,9 +67,9 @@ from memb m join stnt s using (mno);
    이럴 경우 join ~ on 컬럼a=컬럼b 문법을 사용하여
    각 테이블의 어떤 컬럼과 값을 비교할 것인지 지정하라!*/
 select m.mno, name, s.mno, work, bank
-from memb m inner join stnt s on m.mno=s.mno;
+from memb m inner join stnt s on m.mno=s.mno;    --일치하는 데이터가 있으면 조인
 
-/* inner는 생략 가능하다 */
+/************** 많이 보는 형태 inner는 생략 가능하다 ***************/
 select m.mno, name, s.mno, work, bank
 from memb m join stnt s on m.mno=s.mno;
 /* 즉 inner join 은 기준 컬럼의 값이 일치할 때만 데이터를 연결한다. */
@@ -80,7 +80,7 @@ from memb m, stnt s
 where m.mno=s.mno;       
       
 
-/* [inner] join ~ on 의 문제점
+/* [inner] join ~ on 의 문제점 
    => 반드시 on 에서 지정한 컬럼의 값이 같을 경우에만 
         두 테이블의 데이터가 연결된다.
    => 같은 값을 갖는 데이터가 없다면 연결되지 않고, 결과로 출력되지 않는다.
@@ -117,7 +117,7 @@ select
     r.rno, 
     r.loc, 
     r.name
-from lect l left outer join room r on l.rno=r.rno;
+from lect l right outer join room r on l.rno=r.rno;
 /* 왼쪽 테이블인 lect를 기준으로 room 데이터를 연결한다. 
  * 만약 lect와 일치하는 데이터가 room에 없더라도 
  * lect 데이터를 출력한다!
@@ -127,14 +127,29 @@ from lect l left outer join room r on l.rno=r.rno;
 /* 요구사항:
    모든 멤버의 번호와 이름을 출력하라!  
    단 학생의 경우 재직여부도 출력하라!*/
-    
-/* 다음 질의문은 안타깝게도 학생 목록만 출력한다.
+
+-- 1) 모든 멤버 데이터 출력하기
+select mno, name from memb;    
+
+-- 2) 학생데이터를 가져와서 연결하기
+select mno, name, work from memb natural join stnt;
+
+select mno, name, work from memb join stnt using(mno);
+
+select memb.mno, name, work from memb, stnt where memb.mno=stnt.mno;
+
+select memb.mno, name, work from memb inner join stnt on memb.mno=stnt.mno;
+
+select memb.mno, name, work from memb join stnt on memb.mno=stnt.mno;
+
+select m.mno, name, work from memb m join stnt s on m.mno=s.mno; /*가장 많이 쓰이는 형태*/
+
+/* 안타깝게도 위의 SQL문은 학생 목록만 출력한다.
     왜? memb테이블의 데이터와 stnt 테이블의 데이터를 
-    추출할 때 mno가 같은 데이터만 추출한다.*/
-select m.mno, name, work
-from memb m join stnt s on m.mno=s.mno;                     
+    연결할 때 mno가 같은 데이터만 연결하여 추출하기 때문이다.
       
-/* 상대 테이블(stnt)에 연결할 대상(데이터)이 없더라도
+ 해결책?
+        상대 테이블(stnt)에 연결할 대상(데이터)이 없더라도
     select에서 추출하는 방법 */
 select m.mno, name, work
 from memb m left outer join stnt s on m.mno=s.mno;           
@@ -164,7 +179,7 @@ from lect_appl la
         join stnt s on la.mno=s.mno;
   
 /* 4단계: 수상신청한 강의 번호 대신 강의명을 출력 */
-select la.lano, l.titl, m.name, s.work, la.rdt
+select la.lano, l.titl, m.name, s.work, la.rdt, l.rno
 from lect_appl la 
         join memb m on la.mno=m.mno
         join stnt s on la.mno=s.mno 
@@ -174,7 +189,7 @@ from lect_appl la
  * => 강의실 번호는 lect 테이블 데이터에 있다.
  * => 강의실 이름은 room 테이블 데이터에 있다. 
  */
-select la.lano, l.titl, m.name, s.work, la.rdt, r.name
+select la.lano, l.titl, m.name, s.work, la.rdt, r.name, l.mno
 from lect_appl la 
         join memb m on la.mno=m.mno
         join stnt s on la.mno=s.mno 
