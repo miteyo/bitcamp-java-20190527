@@ -51,7 +51,7 @@
 
 <!-- 파라미터 타입의 map인 경우,
      in-parameter를 지정할 때 #{key} 로 사용하면 된다. -->
-  <insert id="insert2" parameterType="map">
+  <insert id="insert2" parameterType="map"> <!-- map은 빌트인 별명 -->
     insert into x_board(title,contents) 
     values(#{title},#{contents})
   </insert>

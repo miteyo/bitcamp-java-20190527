@@ -2,14 +2,14 @@
 
 <!-- XML 태그의 형식에 대한 정보.
 루트 엘리먼트(=태그): configuration
-형식에 대한 공식적인(PUBLIC) 이름: "-//mybatis.org//DTD Config 3.0//EN"
+형식에 대한 공식적인(PUBLIC) 이름: "-//mybatis.org//DTD Config 3.0//EN"       !저 링크에 들어가 다운받으면 나와있는 규칙에 따라 작성해야 한다.!
 형식을 정의한 파일: "http://mybatis.org/dtd/mybatis-3-config.dtd"
  -->
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
   
-<!-- mybatis 설정 파일의 루트 엘리먼트 -->  
+<!-- mybatis 설정 파일의 루트 엘리먼트 (가장 바깥에 있는 태그) -->  
 <configuration>
 
   <!-- DBMS 접속 정보 목록 -->
@@ -35,11 +35,9 @@
   <mappers>
   
     <!-- SQL이 보관된 파일의 경로 -->
-    <mapper resource="ch26/a/BoardMapper.xml"/>
+    <mapper resource="ch26/b/BoardMapper.xml"/> <!-- 클래스 경로를 적는다 -->
   </mappers>
 </configuration>
-
-
 
 
 

@@ -20,14 +20,14 @@ public class Test03 {
     SqlSession sqlSession = sqlSessionFactory.openSession();
  
     Board board = new Board();
-    board.setNo(5);
+    board.setNo(18);
     board.setTitle("xxxxx");
     board.setContents("내용이라네요...");
     
     int count = sqlSession.update("board.update", board);
     System.out.println(count);
     
-    sqlSession.commit();
+    sqlSession.commit(); //openSession(); false 이기때문에 commit() 해줘야함
     
     List<Board> boards = sqlSession.selectList("board.select1");
     for (Board b : boards) {

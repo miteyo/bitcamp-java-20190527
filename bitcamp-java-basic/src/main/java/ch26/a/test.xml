@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Students>
+  <stuednt>
+    <name>                          <!-- <firstname> meta-data(부정보, 태그) --> 
+      <firstname>길동</firstname>    <!-- 길동: data -->
+      <lastname>홍</lastname>
+    </name>
+    <school> name="한국대학교" major="컴공" </school>
+</stuednt>
+
+</Students>
+
+
+
+
+ <!--  Json -->
+[
+  {
+
+ "name" : {
+  "first_name": "길동", "last_name": 홍
+  },
+  
+  "school": {
+   {"name": "한국대학교", "major": "컴공"},
+   }
+
+  }
+]
