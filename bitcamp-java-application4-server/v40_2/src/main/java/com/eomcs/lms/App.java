@@ -45,7 +45,7 @@ import com.eomcs.util.ConnectionFactory;
 import com.eomcs.util.PlatformTransactionManager;
 
 public class App {
-
+1
   private static final int CONTINUE = 1;
   private static final int STOP = 0;
   
