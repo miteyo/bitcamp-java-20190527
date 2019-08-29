@@ -45,8 +45,33 @@ public class Test02 {
 
 }
 
+/* 게시글 번호와 첨부파일이 있는 게시글이 일치할 경우만 출력(게시물에 첨부파일 없으면 출력 ㄴㄴ)
+select 
+b.board_id,
+b.title,
+b.contents,
+b.created_date,
+b.view_count,
+f.board_file_id,
+f.file_path
 
+from x_board b
+  inner join x_board_file f on b.board_id=f.board_id
 
+//모든 게시글을 출력 (첨부파일 없는 게시물도 출력)
+ * 
+ * select 
+b.board_id,
+b.title,
+b.contents,
+b.created_date,
+b.view_count,
+f.board_file_id,
+f.file_path
+ from x_board b
+  left outer join x_board_file f on b.board_id=f.board_id
+  
+*/
 
 
 

@@ -55,9 +55,9 @@
   <select id="select3" resultMap="boardMap" parameterType="map">
     select * 
     from x_board
-    where 1=0
+    where 1=0         <!-- 1=0 기본 거짓으로 셋팅 or <if문> or <if문>  -->
     <if test="no != null">
-      or board_id = #{no}
+     or board_id = #{no}
     </if>
     <if test="title != null">
       or title like concat('%', #{title}, '%')
@@ -147,7 +147,7 @@
     select * 
     from x_board
     order by 
-      <if test="column != null">
+      <if test="columnn != null">
         #{column} #{sort}
       </if>
   </select>
@@ -192,6 +192,27 @@
           #{value}
         </foreach>
   </select>
+  
+  <select id="select9_2" resultMap="boardMap" parameterType="map">
+    select *
+    from x_board
+    where 
+      
+        <foreach collection="list" item="value" separator="or"> <!-- value: ArrayList에서 꺼낸 값 -->
+         title like concat('%' #{value}, '%') 
+        </foreach>
+  </select>
+  
+    <select id="select9_3" resultMap="boardMap" parameterType="map">
+    select *
+    from x_board
+    where 
+      
+        <foreach collection="list" item="b"  separator="or"> <!-- value: ArrayList에서 꺼낸 값 -->
+         title like concat('%' #{b.title}, '%') 
+        </foreach>
+  </select>
+  
 </mapper>
 
 

@@ -30,11 +30,13 @@
     프로퍼티명은 아무거나 상관없다.
   -->
   <select id="select2" resultMap="boardMap" parameterType="int">
-    select * from x_board where board_id = #{amuguna}
+    select * from x_board 
+    where board_id = #{amuguna}
   </select>
 
   <select id="select3" resultMap="boardMap" parameterType="string">
-    select * from x_board where title like concat('%', #{value}, '%')
+    select * from x_board 
+    where title like concat('%', #{value}, '%')
   </select>  
   
 <!-- insert 문을 작성할 때는 insert 엘리먼트에 작성한다.

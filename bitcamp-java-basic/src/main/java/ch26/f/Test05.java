@@ -27,11 +27,11 @@ public class Test05 {
     Scanner keyboard = new Scanner(System.in);
     System.out.print("게시물 번호? ");
     String value = keyboard.nextLine();
-    try {
+    try { 
       params.put("no", Integer.parseInt(value));
     } catch (Exception e) {
     }
-    
+     
     System.out.print("제목? ");
     value = keyboard.nextLine();
     if (value.length() > 0) {

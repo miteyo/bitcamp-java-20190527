@@ -14,7 +14,7 @@ public class Test06 {
 
   public static void main(String[] args) throws Exception {
     
-    InputStream inputStream = Resources.getResourceAsStream(
+    InputStream inputStream = Resources.getResourceAsStream( 
         "ch26/f/mybatis-config.xml");
     SqlSessionFactory sqlSessionFactory =
       new SqlSessionFactoryBuilder().build(inputStream);

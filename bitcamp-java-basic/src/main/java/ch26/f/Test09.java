@@ -1,4 +1,4 @@
-// dynamic SQL 다루기 - <foreach> 태그 사용법
+// dynamic SQL 다루기 - <foreach> 태그 사용법1
 package ch26.f;
 
 import java.io.InputStream;
@@ -22,7 +22,7 @@ public class Test09 {
     
     SqlSession sqlSession = sqlSessionFactory.openSession();
  
-    ArrayList<Integer> noList = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<>();
     
     Scanner keyboard = new Scanner(System.in);
     
@@ -33,7 +33,7 @@ public class Test09 {
         if (value.length() == 0) {
           break;
         }
-        noList.add(Integer.valueOf(value));
+        list.add(Integer.valueOf(value));
       } catch (Exception e) {
         break;
       }
@@ -42,7 +42,7 @@ public class Test09 {
     keyboard.close();
     
     HashMap<String,Object> params = new HashMap<>();
-    params.put("noList", noList);
+    params.put("noList", list);
     
     List<Board> boards = sqlSession.selectList("board.select9", params);
     

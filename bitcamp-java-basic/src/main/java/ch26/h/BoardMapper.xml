@@ -33,7 +33,7 @@
     <result column="contents"   property="contents"/>
     
     <!-- 자식 테이블의 데이터를 받을 필드를 선언 -->
-    <collection property="attachFiles" ofType="attachFile">
+    <collection property="attachFiles" ofType="attachFile">    <!-- Board에 있는 list에 담아라 -->
       <!-- 같은 부모의 자식 테이블의 데이터는 자바 객체에 저장한 후
            부모 객체 필드에 주입된다.
            select 결과로 생성된 자바 객체는 <id> 태그에 지정된 프로퍼티 값을 기준을 

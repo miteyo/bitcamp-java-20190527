@@ -36,7 +36,7 @@ public class Test01 {
     try {
       boards = sqlSession.selectList("board.select1", Integer.parseInt(keyword));
     } catch (Exception e) {
-      boards = sqlSession.selectList("board.select1");
+     boards = sqlSession.selectList("board.select1");
     }
     
     for (Board b : boards) {
