@@ -17,9 +17,9 @@ public class Test02 {
             Calculator.class, 
             Calculator2.class, 
             Calculator3.class}, 
-        new InvocationHandler() {
+        new InvocationHandler() { 
           @Override
-          public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+          public Object invoke(Object proxy, Method method, Object[] args) throws Throwable { //익명클래스
          // newProxyInstance()가 생성한 객체에 대해 메서드를 호출할 때마다 이 메서드가 호출된다.
             int a = (int) args[0]; // auto-unboxing => ((Integer)args[0]).intValue();
             int b = (int) args[1]; // auto-unboxing => ((Integer)args[1]).intValue();

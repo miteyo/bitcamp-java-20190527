@@ -10,7 +10,7 @@ public class Test07 {
     
     Class<?> clazz = String.class;
     
-    Constructor<?>[] constructors = clazz.getConstructors();
+    Constructor<?>[] constructors = clazz.getConstructors(); 
     for (Constructor<?> c : constructors) {
       System.out.printf("%s():\n", c.getName());
       
