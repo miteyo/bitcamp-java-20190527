@@ -22,6 +22,7 @@ public class MybatisDaoFactory {
           // 자동으로 생성된 DAO 구현체에 대해 메서드를 호출하면 최종적으로 이 메서드가 호출된다.
 
           String interfaceName = clazz.getSimpleName();
+          System.out.println(interfaceName);
           String methodName = method.getName();
           String sqlId = interfaceName + "." + methodName;  
 
@@ -45,7 +46,7 @@ public class MybatisDaoFactory {
               // sqsSession에서는 insert()/update()/delete() 중 아무거나 호출해도 똑같다.
               return (args == null) ? sqlSession.insert(sqlId) :
                 sqlSession.insert(sqlId, args[0]);
-              
+
             } else {
               return (args == null) ? sqlSession.selectOne(sqlId) :
                 sqlSession.selectOne(sqlId, args[0]);
@@ -55,16 +56,16 @@ public class MybatisDaoFactory {
         });
   }
 }
-
-// @SuppressWarnings("unchecked")
-// public <T> T createDao(Class<T> clazz) {
-// return (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[] {clazz},
-// new InvocationHandler(/* 오브젝트 생성자 */) {/* 인터페이스를 구현한 익명클래스 */
-// @Override
-// public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-// // TODO Auto-generated method stub
-// return null;
-// }
-// });
-// }
-
+/*
+@SuppressWarnings("unchecked")
+public <T> T createDao(Class<T> clazz) {
+  return (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[] {clazz},
+      new InvocationHandler(/* 오브젝트 생성자 */) {/* 인터페이스를 구현한 익명클래스 */
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+      // TODO Auto-generated method stub
+      return null;
+    }
+  });
+}
+*/

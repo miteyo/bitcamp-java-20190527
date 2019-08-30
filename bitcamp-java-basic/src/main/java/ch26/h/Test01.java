@@ -15,6 +15,7 @@ public class Test01 {
     
     InputStream inputStream = Resources.getResourceAsStream(
         "ch26/h/mybatis-config.xml");
+    
     SqlSessionFactory sqlSessionFactory =
       new SqlSessionFactoryBuilder().build(inputStream);
     

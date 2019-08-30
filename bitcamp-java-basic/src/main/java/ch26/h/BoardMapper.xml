@@ -63,9 +63,7 @@
       board_id = #{value}
   </select>
   
-  <select id="selectBoardWithAttachFile" 
-          resultMap="boardAttachFileMap" 
-          parameterType="int">
+  <select id="selectBoardWithAttachFile" resultMap="boardAttachFileMap" parameterType="int">
     select
       b.board_id,
       b.title,
